@@ -1,0 +1,31 @@
+Tc-Osgi-Parent Software Test Plan
+
+* Exigences d'installation
+
+** @req STP_TC_OSGI_PARENT_INSTALL_010
+
+  Installation d'un des projets TC-OSGI sur un OS unix en :
+  
+   appliquant un ensemble de dpkg-deb -i sur les deb obtenu en production incluant, un project et l'ensemble de ses dependances utilisant l'outil apt-get install avec un depot debian identifié 
+
+        * @version 0.1.0
+
+        * @verify SRS_TC_OSGI_PARENT_INSTALL_010
+
+** @req STP_TC_OSGI_PARENT_INSTALL_020
+
+  Installation des projets TC-OSGI sur un OS windows en dezippant le tar.gz obtenu en production incluant, un project et l'ensemble de ses dependances
+
+        * @version 0.1.0
+
+        * @verify SRS_TC_OSGI_PARENT_INSTALL_020
+
+* Composant de test
+
+** @req STP_TC_OSGI_PARENT_INTERNAL_DB_TEST_010
+
+  TC-OSGI definit le projet tc-osgi-bundle-internal-database-connector-test afin de fournir un cas d'etude de test
+
+        * @version 0.1.0
+
+        * @satisfy SRS_TC_OSGI_PARENT_INTERNAL_DB_040

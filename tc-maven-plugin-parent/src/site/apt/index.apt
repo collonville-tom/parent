@@ -1,0 +1,3 @@
+Introduction
+
+  Ce pom parent a pour but de factoriser les elements constitutif des plug in maven participant aux projets TC-OSGI. 

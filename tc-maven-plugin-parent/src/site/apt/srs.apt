@@ -1,0 +1,27 @@
+Tc-MavenPlugin-Parent Software Requirements Specification
+
+* Exigences
+
+** @req SRS_TC_MAVEN_PLUGIN_PARENT_010
+
+  Les composant peuvent etre des plugins maven d'aide a l'outillage des projets TC-OSGI ou d'aide au developpement de TC-OSGI
+
+        * @version 0.1.0
+
+        * @specify SDD_TC_PARENT_PROJECT_010
+
+        * @derive SRS_TC_PARENT_GENERAL_030
+
+        * @I
+
+* Plugins
+
+** @req SRS_TC_MAVEN_PLUGIN_PLUGINS_010
+
+    Un composant permet d'extraire des informations de base de l'ensemble des projets TC-OSGI
+
+        * @version 0.1.0
+
+        * @refine SRS_TC_PARENT_GENERAL_030
+
+        * @A

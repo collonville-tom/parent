@@ -1,0 +1,156 @@
+Tc-Osgi-Parent Software Design Description
+
+* Exigences de compilation
+
+** @req SDD_TC_OSGI_PARENT_COMPILATION_010
+
+  Le pom parent aux composants osgi factorise la preparation au packaging jar/bundle osgi. Pour ce faire, le plugin maven-dependency-plugin est utilisé pour ajouter les dependances au bundle, le plugin maven-resources-plugin afin d'y ajouter egalement ses resources. Le plugin maven-jar-plugin est finalement employer pour packager ce bundle. A noter que la nature osgi du jar construit est deleguer au pom derivant de ce pom parent.
+
+        * @version 0.1.0
+
+        * @refine SDD_TC_PARENT_PROJECT_020
+
+        * @satisfy SRS_TC_OSGI_PARENT_010
+
+* Exigences de test
+
+** @req SDD_TC_OSGI_PARENT_TEST_010
+
+  Afin d'assurer l'execution des TU sur les composant osgi, le pom parent configure le plug in maven maven-surefire-plugin
+
+        * @version 0.1.0
+
+        * @refine SDD_TC_PARENT_GENERAL_020
+
+        * @satisfy SRS_TC_PARENT_MAINT_030
+
+
+* Exigences d'installation
+
+** @req SDD_TC_OSGI_PARENT_INSTALL_010
+
+  Les projets TC-OSGI s'installe sur les OS unix via la construction d'un assembly gerer par le plugin maven-assembly-plugin qui prepare le package .deb realisé par le plug in maven-antrun-plugin dans les pom fils. La datation du deb est realisé a l'aide du plugin maven buildnumber-maven-plugin et deposé dans le fichier du responsable dans le champs Version
+
+        * @version 0.1.0
+
+        * @refine SDD_TC_PARENT_GENERAL_040
+
+        * @satisfy SRS_TC_OSGI_PARENT_INSTALL_010
+
+** @req SDD_TC_OSGI_PARENT_INSTALL_020
+
+  Les projets TC-OSGI s'installe sur les OS windows via la construction d'un assembly gerer par le plugin maven-assembly-plugin qui prepare le package .tar.gz realisé par le plug in maven-antrun-plugin dans les pom fils.
+
+        * @version 0.1.0
+
+        * @refine SDD_TC_PARENT_GENERAL_040
+
+        * @satisfy SRS_TC_OSGI_PARENT_INSTALL_020
+
+* Composants
+
+** @req SDD_TC_OSGI_PARENT_EQUINOX_010
+
+  TC-OSGI definit le conteneur d'application equinox loader construit en java 7 standart basé sur le composants equinox de eclipse. Il s'appuie sur le composant utils pour deployer de facon autonome les bundles indispensables au demarrage du conteneur d'application.
+
+        * @version 0.1.0
+
+        * @satisfy SRS_TC_OSGI_PARENT_EQUINOX_010
+
+        * @depend SDD_TC_OSGI_PARENT_UTILS_020
+
+*** @req SDD_TC_OSGI_PARENT_UTILS_020
+
+  TC-OSGI definit le projet utils ayant le double role d'etre une dependance de equinox loader pour son fonctionnement normal mais d'etre un bundle osgi et de fournir egalement des services generiques techniques aux autres bundles et applications evoluant au sein du conteneur d'application.
+
+        * @version 0.1.0
+
+        * @satisfy SRS_TC_OSGI_PARENT_PROJECT_UTILS_020
+
+*** @req SDD_TC_OSGI_PARENT_SPRING_030
+
+  TC-OSGI definit le projet tc-osgi-bundle-spring afin d'etendre les capacité OSGI du framework equinox loader avec les specificités de Spring DM (Dynamic Module).
+
+        * @version 0.1.0
+
+        * @satisfy SRS_TC_OSGI_PARENT_SPRING_030
+
+        * @depend SDD_TC_OSGI_PARENT_UTILS_020
+
+*** @req SDD_TC_OSGI_PARENT_INTERNAL_DB_040
+
+  TC-OSGI definit le projet tc-osgi-bundle-internal-database-connector afin d'etendre les capacité OSGI du framework equinox loader avec les specificités d'une base de données embaquées.
+
+        * @version 0.1.0
+
+        * @satisfy SRS_TC_OSGI_PARENT_INTERNAL_DB_040
+        
+        * @depend SDD_TC_OSGI_PARENT_UTILS_020
+        
+*** @req SDD_TC_OSGI_PARENT_SWING_050
+
+  TC-OSGI definit le projet tc-osgi-bundle-gui afin d'etendre les capacité OSGI du framework equinox loader avec des composant swing pre construit et faciliter la construction d'application.
+
+        * @version 0.1.0
+
+        * @depend SDD_TC_OSGI_PARENT_UTILS_020, SDD_TC_OSGI_PARENT_PROJECT_SYSLOG4J_010
+        
+        * @satisfy SRS_TC_OSGI_PARENT_SWING_050
+        
+*** @req SDD_TC_OSGI_PARENT_EXTERNAL_DB_060
+
+  TC-OSGI definit le projet tc-osgi-bundle-externel-database-connector afin d'etendre les capacité OSGI du framework equinox loader avec des connecteurs vers des bases de données externes.
+
+        * @version 0.1.0
+
+        * @depend SDD_TC_OSGI_PARENT_UTILS_020, SDD_TC_OSGI_PARENT_PROJECT_BERKELEY_DB_010
+        
+        * @satisfy SRS_TC_OSGI_PARENT_EXTERNAL_DB_060
+        
+*** @req SDD_TC_OSGI_PARENT_PROJECT_SYSLOG4J_010
+
+  TC-OSGI incorpore un composant de wrapping de l'api syslog4j.
+
+        * @version 0.1.0
+
+		* @satisfy SRS_TC_OSGI_PARENT_PROJECT_SYSLOG4J_010
+        
+*** @req SDD_TC_OSGI_PARENT_PROJECT_BERKELEY_DB_010
+
+  TC-OSGI incorpore un composant de wrapping de l'api berkeley db.
+
+        * @version 0.1.0
+
+        * @satisfy SRS_TC_OSGI_PARENT_PROJECT_BERKELEY_DB_010
+
+** Applications
+
+*** @req SDD_TC_OSGI_PARENT_APT_010
+
+  TC-OSGI incorpore un outil pour la manipulation de fichiers de format apt.
+  
+        * @version 0.1.0
+
+        * @satisfy SRS_TC_OSGI_PARENT_APT_010
+        
+        * @depend SDD_TC_OSGI_PARENT_UTILS_020, SDD_TC_OSGI_PARENT_SWING_050
+
+*** @req SDD_TC_OSGI_PARENT_SYSLOG_010
+
+  TC-OSGI incorpore un outil de gestion de flux de journaux logiciels
+
+        * @version 0.1.0
+
+        * @satisfy SRS_TC_OSGI_PARENT_SYSLOG_010
+        
+        * @depend SDD_TC_OSGI_PARENT_UTILS_020
+        
+*** @req SDD_TC_OSGI_PARENT_HELLO_WORLD_010
+
+  TC-OSGI incorpore un projet de test generale pour effectuer des poc technique
+
+        * @version 0.1.0
+        
+        * @satisfy SRS_TC_OSGI_PARENT_HELLO_WORLD_010
+
+        * @depend SRS_TC_OSGI_PARENT_PROJECT_UTILS_020

@@ -1,0 +1,316 @@
+Tc-Osgi-Parent Software Requirements Specification
+
+* Exigences
+
+** @req SRS_TC_OSGI_PARENT_010
+
+  Les projets TC-OSGI sont des d'applications basés sur le framework osgi 
+
+        * @version 0.1.0
+
+        * @define SRS_TC_PARENT_GENERAL_020
+
+        * @specify SDD_TC_PARENT_PROJECT_020
+
+        * @I
+
+* Exigences d'installation
+
+** @req SRS_TC_OSGI_PARENT_INSTALL_010
+
+  Les projets TC-OSGI s'installe sur les OS unix
+
+        * @version 0.1.0
+
+        * @specify SDD_TC_PARENT_GENERAL_040
+
+        * @T
+
+** @req SRS_TC_OSGI_PARENT_INSTALL_020
+
+  Les projets TC-OSGI s'installe sur l'OS windows
+
+        * @version 0.1.0
+
+        * @specify SDD_TC_PARENT_GENERAL_040
+
+        * @T
+
+* Liste des projets
+
+** Wrapping
+
+*** @req SRS_TC_OSGI_PARENT_PROJECT_SYSLOG4J_010
+
+  TC-OSGI incorpore un composant de wrapping de l'api syslog4j.
+
+        * @version 0.1.0
+
+        * @A
+        
+*** @req SRS_TC_OSGI_PARENT_PROJECT_BERKELEY_DB_010
+
+  TC-OSGI incorpore un composant de wrapping de l'api berkeley db.
+
+        * @version 0.1.0
+
+        * @A
+
+** Core
+
+*** @req SRS_TC_OSGI_PARENT_EQUINOX_010
+
+  TC-OSGI contient un conteneur d'applications.
+  
+        * @version 0.1.0
+
+        * @depend SRS_TC_OSGI_PARENT_PROJECT_UTILS_020
+
+        * @A
+
+*** @req SRS_TC_OSGI_PARENT_PROJECT_UTILS_020
+
+  TC-OSGI incorpore un composant utilitaire contenant des outils de bases et generiques pour la construction d'applications.
+
+        * @version 0.1.0
+
+        * @A
+
+*** @req SRS_TC_OSGI_PARENT_SPRING_030
+
+  TC-OSGI incorpore un conteneur fournissant les outils pour utilisé les specificités de Spring DM (Dynamic Module).
+
+        * @version 0.1.0
+
+        * @depend SRS_TC_OSGI_PARENT_PROJECT_UTILS_020
+
+        * @A
+
+*** @req SRS_TC_OSGI_PARENT_INTERNAL_DB_040
+
+  TC-OSGI incorpore un conteneur fournissant des moyens de stokage de données.
+
+        * @version 0.1.0
+
+        * @depend SRS_TC_OSGI_PARENT_PROJECT_UTILS_020, SRS_TC_OSGI_PARENT_PROJECT_BERKELEY_DB_010
+
+        * @A
+        
+*** @req SRS_TC_OSGI_PARENT_SWING_050
+
+  TC-OSGI incorpore un conteneur fournissant des moyens de creation d'interface graphique.
+
+        * @version 0.1.0
+
+        * @depend SRS_TC_OSGI_PARENT_PROJECT_UTILS_020
+
+        * @A
+        
+*** @req SRS_TC_OSGI_PARENT_EXTERNAL_DB_060
+
+  TC-OSGI incorpore un conteneur fournissant des moyens de stokage de données sur une base non co-localisé.
+
+        * @version 0.1.0
+
+        * @depend SRS_TC_OSGI_PARENT_PROJECT_UTILS_020
+
+        * @A
+        
+** Applications
+
+*** @req SRS_TC_OSGI_PARENT_APT_010
+
+  TC-OSGI incorpore un outil pour la manipulation de fichiers de format apt.
+  
+        * @version 0.1.0
+
+        * @depend SRS_TC_OSGI_PARENT_PROJECT_UTILS_020, SRS_TC_OSGI_PARENT_SWING_050
+
+        * @A
+
+*** @req SRS_TC_OSGI_PARENT_SYSLOG_010
+
+  TC-OSGI incorpore un outil de gestion de flux de journaux logiciels
+
+        * @version 0.1.0
+
+        * @depend SRS_TC_OSGI_PARENT_PROJECT_UTILS_020, SRS_TC_OSGI_PARENT_PROJECT_SYSLOG4J_010
+
+        * @A
+        
+*** @req SRS_TC_OSGI_PARENT_HELLO_WORLD_010
+
+  TC-OSGI incorpore un projet de test generale pour effectuer des poc technique
+
+        * @version 0.1.0
+
+        * @depend SRS_TC_OSGI_PARENT_PROJECT_UTILS_020
+
+        * @A
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+* A RANGER
+
+
+
+** @req SRS_TC_PARENT_PROJECT_010
+
+  TC-OSGI incorpore une application pour des entités discretes 
+  
+        * @version 0.x.0
+        
+** @req SRS_TC_PARENT_020
+
+  TC-OSGI integre un server http et de servlet 
+ 
+        * @version 0.5.1
+        
+** @req SRS_TC_PARENT_030
+
+  TC-OSGI fourni une application permettant du traitement d'images basees sur la morphologie mathematique. 
+
+        * @version 0.0.7
+        
+        
+** @req SRS_TC_PARENT_060
+
+  TC-OSGI incorpore un outil de metamodelisation
+  
+        * @version 0.0.x
+        
+** @req SRS_TC_PARENT_070
+
+  TC-OSGI incorpore un outil pour definir des logiques
+  
+        * @version 0.0.x
+        
+** @req SRS_TC_PARENT_080
+
+  TC-OSGI incorpore un outil pour definir des reseaux de neurones
+  
+        * @version 0.0.x 
+        
+** @req SRS_TC_PARENT_090
+
+  TC-OSGI incorpore un outil pour definir des structures transitionnelles
+  
+        * @version 0.0.x
+        
+** @req SRS_TC_PARENT_100
+
+  TC-OSGI incorpore un outil pour contruire des resultats entre logique et/ou structures transitionnelles
+  
+        * @version 0.0.x
+        
+** @req SRS_TC_PARENT_110
+
+  TC-OSGI incorpore un outil pour gerer des taches
+  
+        * @version 0.0.x
+        
+** @req SRS_TC_PARENT_120
+
+  TC-OSGI founir une application pour gerer des exigences.
+  
+        * @version 0.5.1
+        
+        * @depend SRS_TC_PARENT_150
+        
+** @req SRS_TC_PARENT_130
+
+  TC-OSGI incorpore un outil pour gerer des communications securisé ssh avec une gestion des droits d'utilisation via un serice ssh avec gestion biclé pour securiser des communications
+  
+        * @version 0.0.x
+        
+        * @depend SRS_TC_PARENT_170
+        
+** @req SRS_TC_PARENT_140
+
+  TC-OSGI incorpore un outil de communication de type chat/webcam offrant de transferer du texte ou de la video entre deux utilisateurs et ce de facon securisé ou non
+  
+        * @version 0.0.x
+        
+        * @depend SRS_TC_PARENT_170
+        
+
+        
+** @req SRS_TC_PARENT_160
+
+  TC-OSGI incorpore un outil permettant via ssh et des droits specifique de piloter equinox loader comme en mode console
+  
+        * @version 0.0.x
+        
+        * @depend SRS_TC_PARENT_170
+        
+** @req SRS_TC_PARENT_170
+
+  TC-OSGI incorpore un outil de gestion des droit utilisateurs stoké dans une BD dynamique
+  
+        * @version 0.0.x
+        
+** @req SRS_TC_PARENT_180
+
+  TC-OSGI incorpore un outil de gestion de webcam 
+  
+        * @version 0.0.x        
+
+
+
+
+
+** @req SRS_TC_PARENT_210
+
+  TC-OSGI incorpore un composant utilitaire contenant les outils de base a la construction d'applications de type client lourd
+  
+        * @version 0.3.0
+        
+** @req SRS_TC_PARENT_220
+
+  TC-OSGI incorpore un composant utilitaire contenant les outils de base a la construction des application gwt
+  
+        * @version 0.0.x
+        
+** @req SRS_TC_PARENT_230
+
+  TC-OSGI incorpore un remake du jeu Deuteros
+  
+        * @version 0.0.x
+
+
+** @req SRS_TC_PARENT_260
+
+  TC-OSGI defini un projet test gwt pour eprouver la solution technique de l'utilisation de gwt dans equinox-loader 
+  
+        * @version 0.5.1
+        
+
+
+
+
+
+
+
+
+
+

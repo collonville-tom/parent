@@ -1,0 +1,53 @@
+Backlog
+
+* attentes
+
+		* 0.6.0 Mettre a jour documentation SRS
+		
+		* 0.6.0 Mettre a jour documentation SDD
+		
+		* finaliser l'integration des projets
+		
+		* tc-osgi-ws faire un systeme de clustering sur equinox mettre en place un gestionnaire de serveur décentralisée partageant les applications ou les morceau d applications voir pour faire communiquer les applications et les service OSGI en distant 
+		  
+		* tc-osgi-ws ettendre le clustering pour decentraliser les application et regarder pour faire une interface ws dans équinox pour lancer via une application distante une application "serveur" sans gui, le gui étant du côté distant
+		  
+		* tc-osgi-ws voir si on peut faire des webservice dans le server osgi et dans ce cas voir ce qui doit etre importer pour permettre l exportations de service OSGI 
+		  
+		* tc-osgi-ws voir pour faire connecteur pour vehicul-tracking python et equinox loader et tirant partie de l'appli google mon parcour integration consomation
+		
+		* taskTracking faire le composant pour permettre la gestion des taches des projets dans leur ensemble (dans l'absolu cela parmettra la suppression et l'organisation des taches a faire pour plus d'efficacit�)
+		
+		* tc-osgi-services ajouter une gestionnaire d'applications fournissant une liste d'application launchable ou arretable (via les service start/stop des bundles)
+		  
+		* tc-osgi-sshd composant SSHD pour prévoir un composant permettant d étendre les cmd équinoxe loader format cli, permettre l'appel des cmd equinox en compte admin prevoir des users et interagir avec user-login, revoir une inetrface generique pour que les composants soit exploitable sans ihm gui ou web,  une autre approche serai de wrapper les commande osgi dans des commandes ssh et de deporter le shell osgi vers un shell ssh integer un server ssh pour equinox loader
+		
+		* tc-osgi-monitoring Arbre de défaillance et autodiagnostic compléter avec système de supervision et de rattrapage d'erreur systèmes par action sur le modèle du système, voir pour avoir un modèle de supervision , Prévoir une interface jmx pour les composant équinoxe pour monitorer l appli, creer un composant qui expose les données de conso memoire via une interface mib? integrer un mecanisme d'emission d'alerte sur des seuil de conso memoire anarchique, prevoir generation de fichier de dump de memoire, Le composant fourni un service encapsulant un ManagementFactory permettant de lancer/arreter une capture de la memoire heap, noheap et total de l'application.
+          
+		* tc-osgi-spec-motor
+		  
+		* tc-osgi-process-motor
+		  
+		* tc-osgi-arti-life
+		  
+		* tc-osgi-cam-track projet de video surveillance
+		  
+		* tc-osgi-vehicule-tracking vehicule tracking? faire une application tirant partie de l'appli google mon parcour integration consomation
+		  
+		* tc-osgi-dynamic-osgi faire un projet spring like mais offrant un service (ou pas) permettant de construire dynamiquement des service osgi (histoire de factoryser toutes les declartion de service qui redonde les proxy/tracker etc au travers de tous les projets ou elaborer un genertateur pour l'interface osgi -> a mettre dans utils peut etre?
+		  
+		* tc-osgi-share-hi  faire projet de sauvegrade de données decentralisé avec diffusion des participant et la repartition basé sur bittorrent
+		  
+		* tc-osgi-deuteros Deuretos
+		
+   
+		
+* acceptes
+
+		* 0.6.0 Mettre a jour documentation index
+		
+		* 0.6.0 Mettre a jour documentation STP
+		
+* refuses
+
+
