@@ -11,7 +11,7 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 	</properties>
 	<!-- defined in conf/settings.xml url pour consulter la prod du build de phase site-->
-	<<url>${local-siteweb-url}</url>
+	<url>${local-siteweb-url}</url>
 	<scm>
 		<connection>https://github.com/collonville-tom/tc-parent.git</connection>
 	</scm>
