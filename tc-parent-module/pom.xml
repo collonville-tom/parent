@@ -15,7 +15,7 @@
 	</parent>
 
 	<modules>
-		<module>../../tc-parent</module> 
+		<module>..</module> 
 		<module>../tc-osgi-parent</module>
      		<module>../tc-jee-parent</module>  
 		<module>../tc-maven-plugin-parent</module>
