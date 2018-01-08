@@ -15,11 +15,11 @@
 	</parent>
 
 	<modules>
-		<module>..</module> 
+		<module>../../tc-parent</module> 
 		<module>../tc-osgi-parent</module>
      		<module>../tc-jee-parent</module>  
 		<module>../tc-maven-plugin-parent</module>
-        	<module>tc-android-parent</module>
+        	<module>../tc-android-parent</module>
 	</modules>
 
 
