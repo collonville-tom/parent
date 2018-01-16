@@ -1,3 +1,10 @@
 Introduction
 
-  Ce pom parent a pour but de factoriser les elements constitutif des projets osgi build, dependances et process. 
+  Ce pom parent a pour but de factoriser les elements constitutif des projets de base technologique OSGI. 
+
+  Ces projets s'appuient sur le conteneur applicatif equinox et sur la technologie OSGI qui permet nativement une conception modulaire sous la forme de composants. 
+
+  Nous retrouverons les 4 thematiques de logiciels deja decrit dans le pom tc-parent (poc, capacité technique, outils, composants fonctionnels)
+
+
+

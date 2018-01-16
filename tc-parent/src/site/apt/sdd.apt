@@ -6,7 +6,7 @@ Parent Software Design Description
 
 ** SDD_TC_PARENT_GENERAL_010
 
-  Le projet defini un pom parent principal pour permettre la compilation java en version 1.7 en utilisant le plugin maven org.apache.maven.plugins:maven-compiler-plugin. L'utilisation de maven permet le versionnage a la compilation. 
+  Le projet defini un pom parent principal pour permettre la compilation java en version 1.8 en utilisant le plugin maven org.apache.maven.plugins:maven-compiler-plugin. L'utilisation de maven permet le versionnage a la compilation. 
   
   Le pom defini un distributionManagement permettant de sauvegarder les artifacts maven produit, ce lien pointe vers un artifactory. 
 
@@ -22,26 +22,28 @@ Parent Software Design Description
 
         * @depend SDD_TC_PARENT_GENERAL_010
 
+        * @satisfy SRS_TC_PARENT_MAINT_030
+
         * @version 0.1.0
 
 
 ** @req SDD_TC_PARENT_GENERAL_030
 
-    Un script du depo repo_unix se charge de rationnaliser les manipulations IVQ sur le projet (scripts/prod_utils.sh), compilation, deploiement, installation, desinstallation.
+    Maven permet la compilation, deploiement, installation, desinstallation des composant.
 
-    Les procedures sont outilés via des jobs jenkins avec le profil PROD. 
+    Les procedures sont outilés via des jobs jenkins. 
 
         * @satisfy SRS_TC_PARENT_GENERAL_010, SRS_TC_PARENT_MAINT_010
 
-        * @version 0.1.0
+        * @version 0.1.1
 
 ** @req SDD_TC_PARENT_GENERAL_040
 
     L'utilisation de differents types de builds permet (deb et tar) permet de cibler des installations logicielles sur des OS variés
 
-    Les procedures sont outilés via des jobs jenkins avec le profil PROD. 
+    Les procedures sont outilés via des jobs jenkins. 
 
-        * @satisfy SRS_TC_PARENT_GENERAL_040
+        * @satisfy SRS_TC_PARENT_GENERAL_020
 
         * @version 0.1.0
 
@@ -50,9 +52,9 @@ Parent Software Design Description
 
 ** @req SDD_TC_PARENT_GIT_010
 
-  Un depot git permet la gestion des sources et la maintenance dans le temps des applicatifs. L'application de git tag permet la gestion des versions produites.
+  Un depot git permet la gestion des sources et la maintenance dans le temps des applicatifs. L'application de git tag permet la gestion des versions produites, le repo courant est repo_parent.
 
-        * @version 0.1.0
+        * @version 0.1.1
 
         * @satisfy SRS_TC_PARENT_MAINT_020
 
@@ -87,13 +89,13 @@ Parent Software Design Description
 
 ** @req SDD_TC_PARENT_DOCUMENTATION_030
 
-    Un build sonar soutenu par jenkins permet le suivi de la qualimetrie generale des composants sur la base du profil PROD
+    Un build sonar soutenu par jenkins permet le suivi de la qualimetrie generale des composants 
 
         * @satisfy SRS_TC_PARENT_MAINT_030
 
         * @depend SDD_TC_PARENT_GENERAL_010
 
-        * @version 0.1.0
+        * @version 0.1.1
 
 
 * Types Projects 
@@ -102,30 +104,32 @@ Parent Software Design Description
 
     un sous-pom parent heritant du pom principal defini les elements permettant la construction de plug-in maven
 
-        * @satisfy SRS_TC_PARENT_GENERAL_030
+        * @satisfy SRS_TC_PARENT_PROJET_020
 
-        * @depend SDD_TC_PARENT_GENERAL_010
-
-        * @version 0.1.0
+        * @version 0.1.1
 
 
 ** @req SDD_TC_PARENT_PROJECT_020
 
    un sous-pom parent heritant du pom principal defini les elements de compilation des projets basés sur osgi
 
-        * @satisfy SRS_TC_PARENT_GENERAL_020
+        * @satisfy SRS_TC_PARENT_PROJET_010
 
-        * @depend SDD_TC_PARENT_GENERAL_010
-
-        * @version 0.1.0
+        * @version 0.1.1
 
 ** @req SDD_TC_PARENT_PROJECT_030
 
-   un pom module definit un profil de compilation PROD permettant la compilation de tous les projets et un profil DEV pour une compilation selective. Ces profils pemrettent des compilation en lot.
+   un sous-pom parent heritant du pom principal defini les elements de compilation des projets basés sur JEE
 
-        * @satisfy SRS_TC_PARENT_MAINT_010
+        * @satisfy SRS_TC_PARENT_PROJET_030
 
-        * @depend SDD_TC_PARENT_GENERAL_010
+        * @version 0.1.0
+
+** @req SDD_TC_PARENT_PROJECT_040
+
+   un sous-pom parent heritant du pom principal defini les elements de compilation des projets basés sur Android
+
+        * @satisfy SRS_TC_PARENT_PROJET_040
 
         * @version 0.1.0
 

@@ -1,19 +1,4 @@
 Introduction
 
-  TC-OSGI est un projet pour des projets. L'objectif est de fournir un contexte commun simplifié et elementaire pour le developpement et la realisation de projets logiciels a base java.
-  
-  Ces projets s'appuient sur le conteneur applicatif equinox et sur la technologie OSGI qui permet nativement une conception modulaire sous la forme de composants. Ce conteneur est encapsulé dans un loader de bundle afin de faciliter leur manipulation au sein du contexte OSGI et fournir des primtives a leur gestion.
-  
-  Le but de cette demarche est fournir un contexte de modelisation et de réalisation basé sur les composants afin de promouvoir la reutilisabilité, la maintenabilité et l'evoluabilité des applications.
-    
-  Ainsi, nous trouverons quatres themes d'applications:
-  
-    * Des applications orientées tests ou applications "Hello World" dont le but est l'evaluation technique de solutions. Ces applications refletent une logique de poc technique permettant de montrer les possibilités offertes par TC-OSGI, en matiere d'extension propre (elaboration preliminaire d'outils a l'evolution des capacité du framework lui-meme), d'extension de soutiens (elaboration preliminaire d'outils d'aide au developpement par l'integration de plugin maven collaborant avec le framework) et de domaines applicatifs metier (elaboration preliminaire dde framework metier)
+  Ce pom parent a pour but de factoriser les elements constitutif des projets de base technologique Android. 
 
-    * Des applications "auto-centrées" afin de fournir et augmenter les fonctionnalités du conteneur d'applications, par exemple la mise a disposition de conecteur vers des base de données ou un client server syslog, etc.
-    
-    * Des applications de type outils dont le but est de fournir une aide au developpement d'applications dans le contexte meme du conteneur equinox. Ces extension vont fournir des fonctionnalitées techniques ou metiers nouvelles pour augmenter le champs des applications métiers realisables tout en garantissant une qualité accrue (exploitation des services de logique temporelles, destkit via des plugin maven ou en lien direct avec un connecteur eclipse).
-  
-    * Des applications standards utilisant les frameworks fournis pour deployer des services divers (web, client lourd, orienté framework comme destkit ou neuronnal network).
- 
- 

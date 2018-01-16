@@ -1,19 +1,36 @@
 Introduction
 
-  TC-OSGI est un projet pour des projets. L'objectif est de fournir un contexte commun simplifié et elementaire pour le developpement et la realisation de projets logiciels a base java.
-  
-  Ces projets s'appuient sur le conteneur applicatif equinox et sur la technologie OSGI qui permet nativement une conception modulaire sous la forme de composants. Ce conteneur est encapsulé dans un loader de bundle afin de faciliter leur manipulation au sein du contexte OSGI et fournir des primtives a leur gestion.
-  
-  Le but de cette demarche est fournir un contexte de modelisation et de réalisation basé sur les composants afin de promouvoir la reutilisabilité, la maintenabilité et l'evoluabilité des applications.
-    
-  Ainsi, nous trouverons quatres themes d'applications:
-  
-    * Des applications orientées tests ou applications "Hello World" dont le but est l'evaluation technique de solutions. Ces applications refletent une logique de poc technique permettant de montrer les possibilités offertes par TC-OSGI, en matiere d'extension propre (elaboration preliminaire d'outils a l'evolution des capacité du framework lui-meme), d'extension de soutiens (elaboration preliminaire d'outils d'aide au developpement par l'integration de plugin maven collaborant avec le framework) et de domaines applicatifs metier (elaboration preliminaire dde framework metier)
+  Les projet TC sont un referentiels de projets s'appuyant sur les technologies Java. 
 
-    * Des applications "auto-centrées" afin de fournir et augmenter les fonctionnalités du conteneur d'applications, par exemple la mise a disposition de conecteur vers des base de données ou un client server syslog, etc.
+  Le depots repo_parent a pour vocation la mise en place des elements de bases a la production de projets standard Java declinée selon differentes cibles et technologies.
+
+  Suite a un pom principal tc-parent, differentes derivation permettent les declinaisons suivantes:
+
+  	* Des projets a base de technologies OSGI
+
+  	* Des projets a base de technologies JEE 
+
+	* Des projets a base de technologies Mobile andoid
+
+	* Des projets de plugin maven d'aide a la production 
+
+  Le but de cette demarche est fournir un contexte de modelisation et de réalisation basé sur des composants afin de promouvoir la reutilisabilité, la maintenabilité et l'evoluabilité des applications.
     
-    * Des applications de type outils dont le but est de fournir une aide au developpement d'applications dans le contexte meme du conteneur equinox. Ces extension vont fournir des fonctionnalitées techniques ou metiers nouvelles pour augmenter le champs des applications métiers realisables tout en garantissant une qualité accrue (exploitation des services de logique temporelles, destkit via des plugin maven ou en lien direct avec un connecteur eclipse).
-  
-    * Des applications standards utilisant les frameworks fournis pour deployer des services divers (web, client lourd, orienté framework comme destkit ou neuronnal network).
+  Les themes traités au travers de ces differents axes technologiques (OSGI, JEE, Android, Maven) sont:
+
+  * Faciliter la mise en place de poc techniques
+
+  * Fournir des composants "autocentrés" par l'ajout de composants techniques dont le but est l'ajout de fonctionnalié sans base metier (ajout de capacité de login, ou de chriffrage, incoporation d'une console applicative ou d'un systéme expert)
+
+  * Produire des outils d'aide au developpement et a la modelisation d'application, en passant par exemple, un plugin maven, un connecteur avec eclipse ou des outils d'editions sur une architecture classique d'une application java.
+
+  * Des applications classiques et des frameworks metiers (web, client lourd, orienté framework comme destkit ou neuronnal network).
+    
+Le processus de suivi de devloppement pour l'ensemble des projets utilisent les fichiers apt du site maven afin de formaliser: 
+
+  * les specifications fonctionnelles (fichier srs.apt)
  
- 
+  * les specifications techniques (fichier sdd.apt)
+
+  * le suivi des activités par un backlog permettant une memoire du RAF (fichier backlog.apt)
+

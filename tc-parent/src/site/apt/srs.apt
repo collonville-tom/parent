@@ -4,9 +4,12 @@ Parent Software Requirements Specification
 
 * General
 
+Les projets TC sont des projets de developpement logiciel 
+
+
 ** @req SRS_TC_PARENT_GENERAL_010
 
-  Les projets TC-OSGI facilite la construction d'application java 
+  Les projets TC-PARENT facilite la construction d'application java 
 
         * @version 0.1.0
 
@@ -14,27 +17,49 @@ Parent Software Requirements Specification
 
 ** @req SRS_TC_PARENT_GENERAL_020
 
-  Les projets TC-OSGI integre un projet de framework de projets modulaire
+  Les projets TC-PARENT se developpe sur les OS: windows, unix, android
 
         * @version 0.1.0
 
         * @I
 
-** @req SRS_TC_PARENT_GENERAL_030
+* Exigences sur les types de projets java traités
 
-  Les projets TC-OSGI integre des projets d'aide au build s'integrant naturellement dans les cas d'utilisation du framework d'application modulaire
+** @req SRS_TC_PARENT_PROJET_010
+
+  Les projets TC-PARENT integre un projet de framework de projets modulaire
 
         * @version 0.1.0
-
-        * @depend SRS_TC_PARENT_GENERAL_020
 
         * @I
 
-** @req SRS_TC_PARENT_GENERAL_040
+** @req SRS_TC_PARENT_PROJET_020
 
-  Les projets TC-OSGI s'emploie sur tout type d'OS
+  Les projets TC-PARENT integre des projets d'aide au build s'integrant naturellement dans les cas d'utilisation du framework d'application modulaire
 
         * @version 0.1.0
+
+        * @depend SRS_TC_PARENT_GENERAL_010
+
+        * @I
+
+** @req SRS_TC_PARENT_PROJET_030
+
+  Les projets TC-PARENT integre un projet de framework de projets JEE
+
+        * @version 0.1.0
+
+        * @depend SRS_TC_PARENT_GENERAL_010
+
+        * @I
+
+** @req SRS_TC_PARENT_PROJET_040
+
+  Les projets TC-PARENT integre un projet de framework de projets Android
+
+        * @version 0.1.0
+
+        * @depend SRS_TC_PARENT_GENERAL_010
 
         * @I
 
@@ -42,7 +67,7 @@ Parent Software Requirements Specification
 
 ** @req SRS_TC_PARENT_MAINT_010
 
-  Les projets TC-OSGI sont produits periodiquement, versionnés, diffusé et reproductible
+  Les projets TC-PARENT sont produits periodiquement, versionnés, diffusé et reproductible
 
         * @version 0.1.0
 
@@ -50,7 +75,7 @@ Parent Software Requirements Specification
 
 ** @req SRS_TC_PARENT_MAINT_020
 
-  Une documentation technique sur les besoins fonctionnels definis, la conception logicielle, la strategie de test employé et le niveau de test realisé est delivré
+  Une documentation technique sur les besoins fonctionnels definies, la conception logicielle, la strategie de test employé et le niveau de test realisé est delivré
 
         * @version 0.1.0
 
