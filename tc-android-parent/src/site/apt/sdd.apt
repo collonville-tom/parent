@@ -4,3 +4,10 @@ Parent Software Design Description
 
 * Elements general de definition
 
+** @req SDD_TC_ANDROID_PARENT_010
+
+  Les pom derivant de ce pom parents permettent de decliner projet android TODO definir en quoi
+
+        * @version 0.1.0
+
+        * @satisfy SRS_TC_ANDROID_PARENT_010

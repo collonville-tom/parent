@@ -16,7 +16,7 @@ Tc-Osgi-Parent Software Design Description
 
 ** @req SDD_TC_OSGI_PARENT_TEST_010
 
-  Afin d'assurer l'execution des TU sur les composant osgi, le pom parent configure le plug in maven maven-surefire-plugin
+  Afin d'assurer l'execution des TU sur les composants osgi, le pom parent configure le plug in maven maven-surefire-plugin
 
         * @version 0.1.0
 
@@ -65,92 +65,17 @@ Tc-Osgi-Parent Software Design Description
 
         * @version 0.1.0
 
-        * @satisfy SRS_TC_OSGI_PARENT_PROJECT_UTILS_020
-
-*** @req SDD_TC_OSGI_PARENT_SPRING_030
-
-  TC-OSGI definit le projet tc-osgi-bundle-spring afin d'etendre les capacité OSGI du framework equinox loader avec les specificités de Spring DM (Dynamic Module).
-
-        * @version 0.1.0
-
-        * @satisfy SRS_TC_OSGI_PARENT_SPRING_030
-
-        * @depend SDD_TC_OSGI_PARENT_UTILS_020
-
-*** @req SDD_TC_OSGI_PARENT_INTERNAL_DB_040
-
-  TC-OSGI definit le projet tc-osgi-bundle-internal-database-connector afin d'etendre les capacité OSGI du framework equinox loader avec les specificités d'une base de données embaquées.
-
-        * @version 0.1.0
-
-        * @satisfy SRS_TC_OSGI_PARENT_INTERNAL_DB_040
-        
-        * @depend SDD_TC_OSGI_PARENT_UTILS_020
-        
-*** @req SDD_TC_OSGI_PARENT_SWING_050
-
-  TC-OSGI definit le projet tc-osgi-bundle-gui afin d'etendre les capacité OSGI du framework equinox loader avec des composant swing pre construit et faciliter la construction d'application.
-
-        * @version 0.1.0
-
-        * @depend SDD_TC_OSGI_PARENT_UTILS_020, SDD_TC_OSGI_PARENT_PROJECT_SYSLOG4J_010
-        
-        * @satisfy SRS_TC_OSGI_PARENT_SWING_050
-        
-*** @req SDD_TC_OSGI_PARENT_EXTERNAL_DB_060
-
-  TC-OSGI definit le projet tc-osgi-bundle-externel-database-connector afin d'etendre les capacité OSGI du framework equinox loader avec des connecteurs vers des bases de données externes.
-
-        * @version 0.1.0
-
-        * @depend SDD_TC_OSGI_PARENT_UTILS_020, SDD_TC_OSGI_PARENT_PROJECT_BERKELEY_DB_010
-        
-        * @satisfy SRS_TC_OSGI_PARENT_EXTERNAL_DB_060
-        
-*** @req SDD_TC_OSGI_PARENT_PROJECT_SYSLOG4J_010
-
-  TC-OSGI incorpore un composant de wrapping de l'api syslog4j.
-
-        * @version 0.1.0
-
-		* @satisfy SRS_TC_OSGI_PARENT_PROJECT_SYSLOG4J_010
-        
-*** @req SDD_TC_OSGI_PARENT_PROJECT_BERKELEY_DB_010
-
-  TC-OSGI incorpore un composant de wrapping de l'api berkeley db.
-
-        * @version 0.1.0
-
-        * @satisfy SRS_TC_OSGI_PARENT_PROJECT_BERKELEY_DB_010
+        * @satisfy SRS_TC_OSGI_PARENT_PROJECT_UTILS_010
 
 ** Applications
 
-*** @req SDD_TC_OSGI_PARENT_APT_010
+*** @req SDD_TC_OSGI_PARENT_PROJECT_010
 
-  TC-OSGI incorpore un outil pour la manipulation de fichiers de format apt.
+  TC-OSGI decline des projets sous la formes de bundles interdependants
   
         * @version 0.1.0
 
-        * @satisfy SRS_TC_OSGI_PARENT_APT_010
-        
-        * @depend SDD_TC_OSGI_PARENT_UTILS_020, SDD_TC_OSGI_PARENT_SWING_050
-
-*** @req SDD_TC_OSGI_PARENT_SYSLOG_010
-
-  TC-OSGI incorpore un outil de gestion de flux de journaux logiciels
-
-        * @version 0.1.0
-
-        * @satisfy SRS_TC_OSGI_PARENT_SYSLOG_010
+        * @satisfy SRS_TC_OSGI_PARENT_PROJET_010
         
         * @depend SDD_TC_OSGI_PARENT_UTILS_020
-        
-*** @req SDD_TC_OSGI_PARENT_HELLO_WORLD_010
 
-  TC-OSGI incorpore un projet de test generale pour effectuer des poc technique
-
-        * @version 0.1.0
-        
-        * @satisfy SRS_TC_OSGI_PARENT_HELLO_WORLD_010
-
-        * @depend SRS_TC_OSGI_PARENT_PROJECT_UTILS_020

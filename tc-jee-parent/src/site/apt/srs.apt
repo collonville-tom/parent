@@ -4,4 +4,14 @@ Parent Software Requirements Specification
 
 * General
 
+** @req SRS_TC_JEE_PARENT_010
 
+  Les composant peuvent etre des composants JEE
+
+        * @version 0.1.0
+
+        * @specify SDD_TC_PARENT_PROJECT_030
+
+        * @derive SRS_TC_PARENT_PROJET_030
+
+        * @I

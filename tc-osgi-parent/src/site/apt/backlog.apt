@@ -2,17 +2,17 @@ Backlog
 
 * attentes
 
-		* [DOC] Mettre a jour documentation STP
-
-		* [DOC] Mettre a jour documentation SRS
-		
-		* [DOC] Mettre a jour documentation SDD
-
         * [DOC] faire une note decrivant ce qu'est un bundle dans tc-osgi , , la decoupe interface/implementation, la procedure d'installation targz et deb et la logique sous jacente
 
 * faits
 
 		* 0.7.0 [DOC] Mettre a jour documentation index
+		
+		* 0.7.0 [DOC] Mettre a jour documentation STP
+
+		* 0.7.0 [DOC] Mettre a jour documentation SRS
+		
+		* 0.7.0 [DOC] Mettre a jour documentation SDD
 
 * refuses
 

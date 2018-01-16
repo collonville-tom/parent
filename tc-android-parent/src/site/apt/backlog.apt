@@ -4,11 +4,13 @@ Backlog
 
 		* [DOC] Mettre a jour documentation STP
 
-		* [DOC] Mettre a jour documentation SRS
-		
 		* [DOC] Mettre a jour documentation SDD
+		
+		* [POM] identifier les elements factorisable des sous projets jee
 
 * faits
+
+		* 0.2.0 [DOC] Mettre a jour documentation SRS
 
 		* 0.2.0 [DOC] Mettre a jour documentation index
 

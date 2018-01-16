@@ -27,17 +27,17 @@ Parent Software Requirements Specification
 
 ** @req SRS_TC_PARENT_PROJET_010
 
-  Les projets TC-PARENT integre un projet de framework de projets modulaire
+  Les projets TC-PARENT permettent la production de projets modulaires
 
-        * @version 0.1.0
+        * @version 0.1.1
 
         * @I
 
 ** @req SRS_TC_PARENT_PROJET_020
 
-  Les projets TC-PARENT integre des projets d'aide au build s'integrant naturellement dans les cas d'utilisation du framework d'application modulaire
+  Les projets TC-PARENT permettent la production d'outils de production
 
-        * @version 0.1.0
+        * @version 0.1.1
 
         * @depend SRS_TC_PARENT_GENERAL_010
 
@@ -45,9 +45,9 @@ Parent Software Requirements Specification
 
 ** @req SRS_TC_PARENT_PROJET_030
 
-  Les projets TC-PARENT integre un projet de framework de projets JEE
+  Les projets TC-PARENT permettent la production de projets JEE
 
-        * @version 0.1.0
+        * @version 0.1.1
 
         * @depend SRS_TC_PARENT_GENERAL_010
 
@@ -55,9 +55,9 @@ Parent Software Requirements Specification
 
 ** @req SRS_TC_PARENT_PROJET_040
 
-  Les projets TC-PARENT integre un projet de framework de projets Android
+  Les projets TC-PARENT permettent la production de projets Android
 
-        * @version 0.1.0
+        * @version 0.1.1
 
         * @depend SRS_TC_PARENT_GENERAL_010
 

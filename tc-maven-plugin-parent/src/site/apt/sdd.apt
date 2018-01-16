@@ -4,7 +4,7 @@ Tc-MavenPlugin-Parent Software Design Description
 
 ** @req SDD_TC_MAVEN_PLUGIN_USE_010
 
-  Les pom derivant de ce pom parents peuvent se decliner de facon generique dans le repertoire tc-maven-plugin ou directement conjointement avec le projet avec lequel il se defini.
+  Les pom derivant de ce pom parents peuvent se decliner de facon generique dans un depots de plugin ou directement conjointement avec le projet avec lequel il se defini.
 
         * @version 0.1.0
 
@@ -40,6 +40,6 @@ Tc-MavenPlugin-Parent Software Design Description
 
         * @version 0.1.0
 
-        * @satisfy SRS_TC_MAVEN_PLUGIN_PLUGINS_010
+        * @satisfy SRS_TC_MAVEN_PLUGIN_PARENT_010
 
         * @refine SDD_TC_PARENT_PROJECT_010

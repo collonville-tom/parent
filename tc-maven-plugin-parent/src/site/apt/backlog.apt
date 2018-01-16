@@ -2,13 +2,15 @@ Backlog
 
 * attentes
 
-		* [DOC] Mettre a jour documentation SRS
-		
-		* [DOC] Mettre a jour documentation SDD
+		* [POM] identifier les elements factorisable des sous projets de plugin
 		
 * faits
 
 		* 0.2.0 [DOC] Mettre a jour documentation index
+		
+		* 0.2.0 [DOC] Mettre a jour documentation SRS
+		
+		* 0.2.0 [DOC] Mettre a jour documentation SDD
 
 * refuses
 

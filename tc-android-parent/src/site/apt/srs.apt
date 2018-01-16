@@ -4,4 +4,14 @@ Parent Software Requirements Specification
 
 * General
 
+** @req SRS_TC_ANDROID_PARENT_010
 
+  Les projets peuvent etre des composants et applications android
+
+        * @version 0.1.0
+
+        * @specify SDD_TC_PARENT_PROJECT_040
+
+        * @derive SRS_TC_PARENT_PROJET_040
+
+        * @I

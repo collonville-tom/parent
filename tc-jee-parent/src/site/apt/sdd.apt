@@ -4,7 +4,13 @@ Parent Software Design Description
 
 * Elements general de definition
 
+** @req SDD_TC_MAVEN_PLUGIN_USE_010
 
+  Les pom derivant de ce pom parents permettent de decliner des pom ear, war et ejb
+
+        * @version 0.1.0
+
+        * @satisfy SRS_TC_MAVEN_PLUGIN_PARENT_010
 
 
 

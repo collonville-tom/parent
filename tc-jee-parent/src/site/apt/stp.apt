@@ -1,0 +1,29 @@
+Tc-JEE-Parent Software Test Plan
+
+* Exigences d'installation
+
+** @req STP_TC_JEE_INSTALL_010
+
+  Les projet d'entreprise s'installent par le deployement standard de composant JEE via un ear
+
+        * @version 0.1.0
+
+        * @verify SRS_TC_JEE_PARENT_010
+
+* Moyen de test
+
+** @req STP_TC_JEE_TEST_010
+
+  Les projets mettent en oeuvre leur propres moyens de test unitaire
+
+        * @version 0.1.0
+
+        * @verify SRS_TC_JEE_PARENT_010
+        
+** @req STP_TC_JEE_TEST_020
+
+  Les projets mettent en oeuvre leur propres moyens de test fonctionnel
+
+        * @version 0.1.0
+
+        * @verify SRS_TC_JEE_PARENT_010

@@ -52,7 +52,7 @@ Parent Software Design Description
 
 ** @req SDD_TC_PARENT_GIT_010
 
-  Un depot git permet la gestion des sources et la maintenance dans le temps des applicatifs. L'application de git tag permet la gestion des versions produites, le repo courant est repo_parent.
+  Un depot git permet la gestion des sources des applicatifs. L'application de git tag permet la gestion des versions produites, le repo courant est repo_parent.
 
         * @version 0.1.1
 
@@ -62,7 +62,7 @@ Parent Software Design Description
 
 ** @req SDD_TC_PARENT_DOCUMENTATION_010
 
-  Le pom parent s'appuie sur les plugin de reporting maven maven-plugin-plugin, maven-changelog-plugin, maven-checkstyle-plugin, maven-docck-plugin, maven-jxr-plugin, maven-pmd-plugin, maven-project-info-reports-plugin et maven-surefire-report-plugin pour produire les rapports de qualimetrie de code.
+  Le pom parent s'appuie sur les plugins de reporting maven maven-plugin-plugin, maven-changelog-plugin, maven-checkstyle-plugin, maven-docck-plugin, maven-jxr-plugin, maven-pmd-plugin, maven-project-info-reports-plugin et maven-surefire-report-plugin pour produire les rapports de qualimetrie de code.
 
   Le pom utilise le plugin maven maven-javadoc-plugin pour generer la javadoc et la packager sous format jar.
 
