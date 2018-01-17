@@ -14,15 +14,13 @@ Parent Software Design Description
 
         * @version 0.1.0
 
-        * @satisfy SRS_TC_PARENT_GENERAL_010
+        * @track SRS_TC_PARENT_GENERAL_010
 
 ** @req SDD_TC_PARENT_GENERAL_020
 
     Le pom parent definit par defaut pour les projets des dependances sur les artifacts de test junit et mockito-all
 
-        * @depend SDD_TC_PARENT_GENERAL_010
-
-        * @satisfy SRS_TC_PARENT_MAINT_030
+        * @track SDD_TC_PARENT_GENERAL_010, SRS_TC_PARENT_MAINT_030
 
         * @version 0.1.0
 
@@ -33,7 +31,7 @@ Parent Software Design Description
 
     Les procedures sont outilés via des jobs jenkins. 
 
-        * @satisfy SRS_TC_PARENT_GENERAL_010, SRS_TC_PARENT_MAINT_010
+        * @@track  SRS_TC_PARENT_GENERAL_010, SRS_TC_PARENT_MAINT_010
 
         * @version 0.1.1
 
@@ -43,7 +41,7 @@ Parent Software Design Description
 
     Les procedures sont outilés via des jobs jenkins. 
 
-        * @satisfy SRS_TC_PARENT_GENERAL_020
+        * @@track  SRS_TC_PARENT_GENERAL_020
 
         * @version 0.1.0
 
@@ -56,7 +54,7 @@ Parent Software Design Description
 
         * @version 0.1.1
 
-        * @satisfy SRS_TC_PARENT_MAINT_020
+        * @@track  SRS_TC_PARENT_MAINT_020
 
 * Documentation
 
@@ -72,17 +70,13 @@ Parent Software Design Description
 
         * @version 0.1.0
 
-        * @satisfy SRS_TC_PARENT_MAINT_020
-
-        * @depend SDD_TC_PARENT_GENERAL_010
+        * @@track  SRS_TC_PARENT_MAINT_020, SDD_TC_PARENT_GENERAL_010
 
 ** @req SDD_TC_PARENT_DOCUMENTATION_020
 
     Un build gitstat soutenu par jenkins permet la documentation de l'historique du gestionnaire de version. il est deposé dans le site web dedié
 
-        * @satisfy SRS_TC_PARENT_MAINT_020
-
-        * @depend SDD_TC_PARENT_GIT_010
+        * @@track  SRS_TC_PARENT_MAINT_020, SDD_TC_PARENT_GIT_010
 
         * @version 0.1.0
 
@@ -91,9 +85,7 @@ Parent Software Design Description
 
     Un build sonar soutenu par jenkins permet le suivi de la qualimetrie generale des composants 
 
-        * @satisfy SRS_TC_PARENT_MAINT_030
-
-        * @depend SDD_TC_PARENT_GENERAL_010
+        * @@track  SRS_TC_PARENT_MAINT_030, SDD_TC_PARENT_GENERAL_010
 
         * @version 0.1.1
 
@@ -104,7 +96,7 @@ Parent Software Design Description
 
     un sous-pom parent heritant du pom principal defini les elements permettant la construction de plug-in maven
 
-        * @satisfy SRS_TC_PARENT_PROJET_020
+        * @@track  SRS_TC_PARENT_PROJET_020
 
         * @version 0.1.1
 
@@ -113,7 +105,7 @@ Parent Software Design Description
 
    un sous-pom parent heritant du pom principal defini les elements de compilation des projets basés sur osgi
 
-        * @satisfy SRS_TC_PARENT_PROJET_010
+        * @@track  SRS_TC_PARENT_PROJET_010
 
         * @version 0.1.1
 
@@ -121,7 +113,7 @@ Parent Software Design Description
 
    un sous-pom parent heritant du pom principal defini les elements de compilation des projets basés sur JEE
 
-        * @satisfy SRS_TC_PARENT_PROJET_030
+        * @@track  SRS_TC_PARENT_PROJET_030
 
         * @version 0.1.0
 
@@ -129,7 +121,7 @@ Parent Software Design Description
 
    un sous-pom parent heritant du pom principal defini les elements de compilation des projets basés sur Android
 
-        * @satisfy SRS_TC_PARENT_PROJET_040
+        * @@track  SRS_TC_PARENT_PROJET_040
 
         * @version 0.1.0
 

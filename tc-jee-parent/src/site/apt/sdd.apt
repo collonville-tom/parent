@@ -10,7 +10,7 @@ Parent Software Design Description
 
         * @version 0.1.0
 
-        * @satisfy SRS_TC_MAVEN_PLUGIN_PARENT_010
+        * @track SRS_TC_MAVEN_PLUGIN_PARENT_010
 
 
 

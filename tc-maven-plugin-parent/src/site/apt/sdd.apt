@@ -8,7 +8,7 @@ Tc-MavenPlugin-Parent Software Design Description
 
         * @version 0.1.0
 
-        * @satisfy SRS_TC_MAVEN_PLUGIN_PARENT_010
+        * @track SRS_TC_MAVEN_PLUGIN_PARENT_010
 
 * Dependances
 
@@ -18,9 +18,7 @@ Tc-MavenPlugin-Parent Software Design Description
 
         * @version 0.1.0
 
-        * @satisfy SRS_TC_MAVEN_PLUGIN_PARENT_010
-
-        * @refine SDD_TC_PARENT_PROJECT_010
+        * @track SRS_TC_MAVEN_PLUGIN_PARENT_010, SDD_TC_PARENT_PROJECT_010
 
 ** @req SDD_TC_MAVEN_PLUGIN_DEP_020
 
@@ -28,9 +26,7 @@ Tc-MavenPlugin-Parent Software Design Description
 
         * @version 0.1.0
 
-        * @satisfy SRS_TC_MAVEN_PLUGIN_PARENT_010
-
-        * @refine SDD_TC_PARENT_PROJECT_010
+        * @track SRS_TC_MAVEN_PLUGIN_PARENT_010, SDD_TC_PARENT_PROJECT_010
 
 * Plugins
 
@@ -40,6 +36,4 @@ Tc-MavenPlugin-Parent Software Design Description
 
         * @version 0.1.0
 
-        * @satisfy SRS_TC_MAVEN_PLUGIN_PARENT_010
-
-        * @refine SDD_TC_PARENT_PROJECT_010
+        * @track SRS_TC_MAVEN_PLUGIN_PARENT_010, SDD_TC_PARENT_PROJECT_010

@@ -8,9 +8,7 @@ Tc-MavenPlugin-Parent Software Requirements Specification
 
         * @version 0.1.0
 
-        * @specify SDD_TC_PARENT_PROJECT_010
-
-        * @derive SRS_TC_PARENT_PROJET_020, SRS_TC_PARENT_GENERAL_010
+        * @track SDD_TC_PARENT_PROJECT_010, SRS_TC_PARENT_PROJET_020, SRS_TC_PARENT_GENERAL_010
 
         * @I
 

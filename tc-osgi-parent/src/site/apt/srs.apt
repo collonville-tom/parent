@@ -8,7 +8,7 @@ Tc-Osgi-Parent Software Requirements Specification
 
         * @version 0.1.0
 
-        * @specify SDD_TC_PARENT_PROJECT_020
+        * @track SDD_TC_PARENT_PROJECT_020
 
         * @I
         
@@ -18,7 +18,7 @@ Tc-Osgi-Parent Software Requirements Specification
 
         * @version 0.1.0
 
-        * @specify SDD_TC_PARENT_GENERAL_020
+        * @track SDD_TC_PARENT_GENERAL_020
 
         * @I
 
@@ -30,7 +30,7 @@ Tc-Osgi-Parent Software Requirements Specification
 
         * @version 0.1.0
 
-        * @specify SDD_TC_PARENT_GENERAL_040
+        * @track SDD_TC_PARENT_GENERAL_040
 
         * @T
 
@@ -40,7 +40,7 @@ Tc-Osgi-Parent Software Requirements Specification
 
         * @version 0.1.0
 
-        * @specify SDD_TC_PARENT_GENERAL_040
+        * @track SDD_TC_PARENT_GENERAL_040
 
         * @T
 
@@ -64,7 +64,7 @@ Tc-Osgi-Parent Software Requirements Specification
   
         * @version 0.1.0
 
-        * @depend SRS_TC_OSGI_PARENT_PROJECT_UTILS_020
+        * @track SRS_TC_OSGI_PARENT_PROJECT_UTILS_020
 
         * @A
 
@@ -84,7 +84,7 @@ Tc-Osgi-Parent Software Requirements Specification
   
         * @version 0.1.0
 
-        * @depend SRS_TC_OSGI_PARENT_PROJECT_UTILS_010
+        * @track SRS_TC_OSGI_PARENT_PROJECT_UTILS_010
 
         * @A
 

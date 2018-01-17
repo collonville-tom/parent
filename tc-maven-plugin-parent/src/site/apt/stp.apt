@@ -8,7 +8,7 @@ Tc-MavenPlugin-Parent Software Test Plan
 
         * @version 0.1.0
 
-        * @verify SRS_TC_MAVEN_PLUGIN_PARENT_010
+        * @track SRS_TC_MAVEN_PLUGIN_PARENT_010
 
 * Moyen de test
 
@@ -18,7 +18,7 @@ Tc-MavenPlugin-Parent Software Test Plan
 
         * @version 0.1.0
 
-        * @verify SRS_TC_MAVEN_PLUGIN_PARENT_010
+        * @track SRS_TC_MAVEN_PLUGIN_PARENT_010
         
 ** @req STP_TC_MAVEN_PLUGIN_TEST_020
 
@@ -26,4 +26,4 @@ Tc-MavenPlugin-Parent Software Test Plan
 
         * @version 0.1.0
 
-        * @verify SRS_TC_MAVEN_PLUGIN_PARENT_010
+        * @track SRS_TC_MAVEN_PLUGIN_PARENT_010

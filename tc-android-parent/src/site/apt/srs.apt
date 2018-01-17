@@ -10,8 +10,6 @@ Parent Software Requirements Specification
 
         * @version 0.1.0
 
-        * @specify SDD_TC_PARENT_PROJECT_040
-
-        * @derive SRS_TC_PARENT_PROJET_040
+        * @track SDD_TC_PARENT_PROJECT_040, SRS_TC_PARENT_PROJET_040
 
         * @I

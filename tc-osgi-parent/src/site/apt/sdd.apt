@@ -8,9 +8,7 @@ Tc-Osgi-Parent Software Design Description
 
         * @version 0.1.0
 
-        * @refine SDD_TC_PARENT_PROJECT_020
-
-        * @satisfy SRS_TC_OSGI_PARENT_010
+        * @track  SDD_TC_PARENT_PROJECT_020, SRS_TC_OSGI_PARENT_010
 
 * Exigences de test
 
@@ -20,9 +18,7 @@ Tc-Osgi-Parent Software Design Description
 
         * @version 0.1.0
 
-        * @refine SDD_TC_PARENT_GENERAL_020
-
-        * @satisfy SRS_TC_PARENT_MAINT_030
+        * @track  SDD_TC_PARENT_GENERAL_020, SRS_TC_PARENT_MAINT_030
 
 
 * Exigences d'installation
@@ -33,9 +29,7 @@ Tc-Osgi-Parent Software Design Description
 
         * @version 0.1.0
 
-        * @refine SDD_TC_PARENT_GENERAL_040
-
-        * @satisfy SRS_TC_OSGI_PARENT_INSTALL_010
+        * @track  SDD_TC_PARENT_GENERAL_040, SRS_TC_OSGI_PARENT_INSTALL_010
 
 ** @req SDD_TC_OSGI_PARENT_INSTALL_020
 
@@ -43,9 +37,7 @@ Tc-Osgi-Parent Software Design Description
 
         * @version 0.1.0
 
-        * @refine SDD_TC_PARENT_GENERAL_040
-
-        * @satisfy SRS_TC_OSGI_PARENT_INSTALL_020
+        * @track  SDD_TC_PARENT_GENERAL_040, SRS_TC_OSGI_PARENT_INSTALL_020
 
 * Composants
 
@@ -55,9 +47,7 @@ Tc-Osgi-Parent Software Design Description
 
         * @version 0.1.0
 
-        * @satisfy SRS_TC_OSGI_PARENT_EQUINOX_010
-
-        * @depend SDD_TC_OSGI_PARENT_UTILS_020
+        * @track  SRS_TC_OSGI_PARENT_EQUINOX_010, SDD_TC_OSGI_PARENT_UTILS_020
 
 *** @req SDD_TC_OSGI_PARENT_UTILS_020
 
@@ -65,7 +55,7 @@ Tc-Osgi-Parent Software Design Description
 
         * @version 0.1.0
 
-        * @satisfy SRS_TC_OSGI_PARENT_PROJECT_UTILS_010
+        * @track SRS_TC_OSGI_PARENT_PROJECT_UTILS_010
 
 ** Applications
 
@@ -75,7 +65,5 @@ Tc-Osgi-Parent Software Design Description
   
         * @version 0.1.0
 
-        * @satisfy SRS_TC_OSGI_PARENT_PROJET_010
-        
-        * @depend SDD_TC_OSGI_PARENT_UTILS_020
+        * @track SRS_TC_OSGI_PARENT_PROJET_010, SDD_TC_OSGI_PARENT_UTILS_020
 

@@ -39,7 +39,7 @@ Parent Software Requirements Specification
 
         * @version 0.1.1
 
-        * @depend SRS_TC_PARENT_GENERAL_010
+        * @@track  SRS_TC_PARENT_GENERAL_010
 
         * @I
 
@@ -49,7 +49,7 @@ Parent Software Requirements Specification
 
         * @version 0.1.1
 
-        * @depend SRS_TC_PARENT_GENERAL_010
+        * @@track  SRS_TC_PARENT_GENERAL_010
 
         * @I
 
@@ -59,7 +59,7 @@ Parent Software Requirements Specification
 
         * @version 0.1.1
 
-        * @depend SRS_TC_PARENT_GENERAL_010
+        * @@track  SRS_TC_PARENT_GENERAL_010
 
         * @I
 
