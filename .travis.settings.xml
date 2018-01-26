@@ -49,7 +49,7 @@
 		<profile>
 			<id>artifactory</id>
 			<properties>
-				<arti-url>http://localhost:8081</arti-url>
+				<arti-url>http://82.238.55.33</arti-url>
 			</properties>
 			<repositories>
 				<repository>
