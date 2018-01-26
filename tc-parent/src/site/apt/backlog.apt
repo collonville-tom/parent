@@ -8,7 +8,9 @@ Backlog
 
         * [DOC SDD] indiquer l'url GitHub
         
-        * Ajout de cobertura-maven-plugin et emma-maven-plugin
+        * [DOC] Ajout de cobertura-maven-plugin et emma-maven-plugin
+
+        * [DOC] le passage au plugin javadoc 3.0.0 necessite de revoir la conf a cause des @ dans la doc des classess
 
 * faits
 
