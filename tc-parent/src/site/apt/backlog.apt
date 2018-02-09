@@ -11,6 +11,8 @@ Backlog
         * [DOC] Ajout de cobertura-maven-plugin et emma-maven-plugin
 
         * [DOC] le passage au plugin javadoc 3.0.0 necessite de revoir la conf a cause des @ dans la doc des classess
+	
+	* [POM] revoir pluginManagement et dependancyManagement https://code.i-harness.com/fr/q/9ff5ec a decliner dans le pom fils 
 
 * faits
 
