@@ -10,14 +10,15 @@
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 	</properties>
-	<!-- defined in conf/settings.xml url pour consulter la prod du build de phase site-->
+	<!-- defined in conf/settings.xml url pour consulter la prod du build de 
+		phase site -->
 	<url>${local-siteweb-url}</url>
 	<scm>
 		<connection>https://github.com/collonville-tom/tc-parent.git</connection>
 	</scm>
 	<ciManagement>
 		<system>jenkins</system>
-		<!-- defined in conf/settings.xml url de jenkins si existe-->
+		<!-- defined in conf/settings.xml url de jenkins si existe -->
 		<url>${jenkins-url}</url>
 	</ciManagement>
 	<organization>
@@ -64,7 +65,8 @@
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-javadoc-plugin</artifactId>
-				<version>2.9.1</version> <!-- le passage a la version 3.0.0 du plugin necessite une reconfig a cause des @ dans la doc -->
+				<version>2.9.1</version> <!-- le passage a la version 3.0.0 du plugin necessite une reconfig a cause 
+					des @ dans la doc -->
 				<executions>
 					<execution>
 						<id>attach-javadocs</id>
@@ -107,32 +109,24 @@
 				</executions>
 			</plugin>
 		</plugins>
-		<pluginManagement>
-			<plugins>
-				<plugin>
-					<groupId>org.apache.maven.plugins</groupId>
-					<artifactId>maven-site-plugin</artifactId>
-					<version>3.4</version>
-				</plugin>
-			</plugins>
-		</pluginManagement>
 	</build>
 	<distributionManagement>
 		<snapshotRepository>
 			<id>artifactory</id>
 			<name>artifactory-snapshots</name>
-			<!-- ${arti-url} defined in conf/settings.xml url d'artifactory-->
+			<!-- ${arti-url} defined in conf/settings.xml url d'artifactory -->
 			<url>${arti-url}/artifactory/libs-snapshot-local</url>
 		</snapshotRepository>
 		<repository>
 			<id>artifactory</id>
 			<name>artifactory-releases</name>
-			<!-- ${arti-url} defined in conf/settings.xml  url d'artifactory-->
+			<!-- ${arti-url} defined in conf/settings.xml url d'artifactory -->
 			<url>${arti-url}/artifactory/libs-release-local</url>
 		</repository>
 		<site>
 			<id>siteweb</id>
-			<!-- defined in conf/settings.xml correspond au repertoire local ou sera deposer le contenu du build de la phase site-->
+			<!-- defined in conf/settings.xml correspond au repertoire local ou sera 
+				deposer le contenu du build de la phase site -->
 			<url>${local-siteweb-url}</url>
 		</site>
 	</distributionManagement>
@@ -180,18 +174,20 @@
 			</plugin>
 		</plugins>
 	</reporting>
-	<dependencies>
-		<dependency>
-			<groupId>junit</groupId>
-			<artifactId>junit</artifactId>
-			<version>4.10</version>
-			<scope>test</scope>
-		</dependency>
-		<dependency>
-			<groupId>org.mockito</groupId>
-			<artifactId>mockito-all</artifactId>
-			<version>1.9.5</version>
-			<scope>test</scope>
-		</dependency>
-	</dependencies>
+	<dependencyManagement>
+		<dependencies>
+			<dependency>
+				<groupId>junit</groupId>
+				<artifactId>junit</artifactId>
+				<version>4.10</version>
+				<scope>test</scope>
+			</dependency>
+			<dependency>
+				<groupId>org.mockito</groupId>
+				<artifactId>mockito-all</artifactId>
+				<version>1.9.5</version>
+				<scope>test</scope>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
 </project>
