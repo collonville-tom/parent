@@ -115,13 +115,13 @@
 			<id>artifactory</id>
 			<name>artifactory-snapshots</name>
 			<!-- ${arti-url} defined in conf/settings.xml url d'artifactory -->
-			<url>${arti-url}/artifactory/libs-snapshot-local</url>
+			<url>${arti-url}/artifactory/tc-snapshot-local</url>
 		</snapshotRepository>
 		<repository>
 			<id>artifactory</id>
 			<name>artifactory-releases</name>
 			<!-- ${arti-url} defined in conf/settings.xml url d'artifactory -->
-			<url>${arti-url}/artifactory/libs-release-local</url>
+			<url>${arti-url}/artifactory/tc-release-local</url>
 		</repository>
 		<site>
 			<id>siteweb</id>
