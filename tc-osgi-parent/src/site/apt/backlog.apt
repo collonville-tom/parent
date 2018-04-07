@@ -3,6 +3,8 @@ Backlog
 * attentes
 
         * [DOC] faire une note decrivant ce qu'est un bundle dans tc-osgi , , la decoupe interface/implementation, la procedure d'installation targz et deb et la logique sous jacente
+        
+        * [DEV] construire un projet maven comme pugin-paven mais en artifact maven pour facilite la construction des projets osgi (comme on peut le faire deja avec des projet jee
 
 * faits
 
