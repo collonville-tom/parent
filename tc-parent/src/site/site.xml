@@ -7,7 +7,6 @@
 	<menu name="Specifications">
       <item name="SRS" href="srs.html"/>
       <item name="SDD" href="sdd.html"/>
-      <item name="Backlog" href="backlog.html"/>
     </menu>
     <menu ref="reports" />
     
