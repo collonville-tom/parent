@@ -8,8 +8,7 @@ addons:
     token:
       secure: "748b7fca9a6fbfe5072f997a232f5c4e0ca0e6ca"
 
-before_install:
-  - gem install bundler -v 1.15.1true
+before_install: true
 install : true
 before_script : true
 
@@ -17,10 +16,6 @@ script:
   - cp .travis.settings.xml $HOME/.m2/settings.xml 
   - mvn install
   - mvn clean org.jacoco:jacoco-maven-plugin:prepare-agent package sonar:sonar
-  - bundle exec rspec spec
-  
-after_script:
-  - bundle exec rake coveralls:push
 
 cache:
   directories:
