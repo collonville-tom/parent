@@ -4,7 +4,7 @@
 	<groupId>org.tc.module</groupId>
 	<artifactId>tc-parent-module</artifactId>
 	<name>${project.artifactId}-${project.version}</name>
-	<version>0.1.0</version>
+	<version>0.1.1-SNAPSHOT</version>
 	<packaging>pom</packaging>
 	<description>Pom module de tc-project</description>
 
@@ -21,6 +21,8 @@
      	<module>tc-jee-parent</module>  
 		<module>tc-maven-plugin-parent</module>
         <module>tc-android-parent</module>
+		<module>tc-asciidoctor-pdf-parent</module> 
+		<module>tc-asciidoctor-html-parent</module>
 	</modules>
 
 
