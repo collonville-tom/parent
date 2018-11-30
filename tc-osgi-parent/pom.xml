@@ -1,10 +1,11 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>org.tc.parent</groupId>
 	<artifactId>tc-osgi-parent</artifactId>
 	<name>${project.artifactId}-${project.version}</name>
-	<version>0.7.0</version>
+	<version>0.7.1-SNAPSHOT</version>
 	<packaging>pom</packaging>
 	<description>Pom parent des projets tc-osgi</description>
 
@@ -83,6 +84,37 @@
 		</plugins>
 		<pluginManagement>
 			<plugins>
+				<plugin>
+					<groupId>io.fabric8</groupId>
+					<artifactId>docker-maven-plugin</artifactId>
+					<version>0.27.2</version>
+					<configuration>
+						<images>
+							<image>
+								<name>${project.artifactId}:${project.version}</name>
+								<alias>${project.artifactId}</alias>
+								<build>
+									<maintainer>Collonville Thomas collonville.thomas@gmail.com</maintainer>
+									<!-- <dockerFile>Dockerfile</dockerFile> -->
+									<assembly>
+										<mode>dir</mode>
+										<targetDir>/</targetDir>
+										<descriptor>../assembly/assembly-docker.xml</descriptor>
+									</assembly>
+								</build>
+							</image>
+						</images>
+					</configuration>
+					<executions>
+						<execution>
+							<id>start</id>
+							<phase>package</phase>
+							<goals>
+								<goal>build</goal>
+							</goals>
+						</execution>
+					</executions>
+				</plugin>
 				<plugin>
 					<groupId>org.apache.felix</groupId>
 					<artifactId>maven-bundle-plugin</artifactId>
