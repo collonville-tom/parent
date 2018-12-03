@@ -1,6 +1,4 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>org.tc.parent</groupId>
 	<artifactId>tc-osgi-parent</artifactId>
@@ -82,6 +80,7 @@
 				</executions>
 			</plugin>
 		</plugins>
+
 		<pluginManagement>
 			<plugins>
 				<plugin>
@@ -98,6 +97,7 @@
 									<!-- <dockerFile>Dockerfile</dockerFile> -->
 									<assembly>
 										<mode>dir</mode>
+										<permissions>auto</permissions>
 										<targetDir>/</targetDir>
 										<descriptor>../assembly/assembly-docker.xml</descriptor>
 									</assembly>
@@ -111,7 +111,6 @@
 							<phase>package</phase>
 							<goals>
 								<goal>build</goal>
-								<goal>push</goal>
 							</goals>
 						</execution>
 					</executions>
@@ -247,8 +246,7 @@
 						</execution>
 					</executions>
 				</plugin>
-				<!--This plugin's configuration is used to store Eclipse m2e settings 
-					only. It has no influence on the Maven build itself. -->
+				<!--This plugin's configuration is used to store Eclipse m2e settings only. It has no influence on the Maven build itself. -->
 				<plugin>
 					<groupId>org.eclipse.m2e</groupId>
 					<artifactId>lifecycle-mapping</artifactId>
@@ -284,4 +282,31 @@
 			</plugins>
 		</pluginManagement>
 	</build>
+
+	<profiles>
+		<profile>
+			<id>PUSH</id>
+			<build>
+				<pluginManagement>
+					<plugins>
+						<plugin>
+							<groupId>io.fabric8</groupId>
+							<artifactId>docker-maven-plugin</artifactId>
+							<executions>
+								<execution>
+									<id>start</id>
+									<phase>package</phase>
+									<goals>
+										<goal>build</goal>
+										<goal>push</goal>
+									</goals>
+								</execution>
+							</executions>
+						</plugin>
+					</plugins>
+				</pluginManagement>
+			</build>
+		</profile>
+
+	</profiles>
 </project>
