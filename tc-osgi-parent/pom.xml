@@ -90,7 +90,7 @@
 					<configuration>
 						<images>
 							<image>
-								<name>${docker.login}/${project.artifactId}:${project.version}</name>
+								<name>${docker.login}/${project.artifactId}:%l</name>
 								<alias>${project.artifactId}</alias>
 								<build>
 									<maintainer>Collonville Thomas collonville.thomas@gmail.com</maintainer>
