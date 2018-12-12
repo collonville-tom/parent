@@ -108,7 +108,7 @@
 					<executions>
 						<execution>
 							<id>start</id>
-							<phase>package</phase>
+							<phase>verify</phase>
 							<goals>
 								<goal>build</goal>
 							</goals>
@@ -296,7 +296,7 @@
 							<executions>
 								<execution>
 									<id>start</id>
-									<phase>package</phase>
+									<phase>verify</phase>
 									<goals>
 										<goal>build</goal>
 										<goal>push</goal>
