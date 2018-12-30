@@ -14,6 +14,10 @@
 		<version>0.7.0</version>
 		<relativePath>../tc-parent</relativePath>
 	</parent>
+	
+	<properties>
+		<docker.login>collonvtom</docker.login>
+	</properties>
 
 	<build>
 		<plugins>
