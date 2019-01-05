@@ -11,7 +11,7 @@
     <parent>
         <groupId>org.tc.parent</groupId>
         <artifactId>tc-parent</artifactId>
-        <version>0.8.0-SNAPSHOT</version>
+        <version>0.8.0</version>
         <relativePath>../tc-parent</relativePath>
     </parent>
    
