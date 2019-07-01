@@ -1,17 +1,16 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>org.tc.parent</groupId>
 	<artifactId>tc-parent</artifactId>
 	<name>${project.artifactId}-${project.version}</name>
-	<version>0.7.0</version>
+	<version>0.8.0</version>
 	<packaging>pom</packaging>
 	<description>Pom parent des projets</description>
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<docker.login>collonvtom</docker.login>
 	</properties>
-	<!-- defined in conf/settings.xml url pour consulter la prod du build de 
-		phase site -->
+	<!-- defined in conf/settings.xml url pour consulter la prod du build de phase site -->
 	<url>${local-siteweb-url}</url>
 	<scm>
 		<connection>https://github.com/collonville-tom/tc-parent.git</connection>
@@ -65,8 +64,7 @@
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-javadoc-plugin</artifactId>
-				<version>2.9.1</version> <!-- le passage a la version 3.0.0 du plugin necessite une reconfig a cause 
-					des @ dans la doc -->
+				<version>2.9.1</version> <!-- le passage a la version 3.0.0 du plugin necessite une reconfig a cause des @ dans la doc -->
 				<executions>
 					<execution>
 						<id>attach-javadocs</id>
@@ -109,6 +107,33 @@
 				</executions>
 			</plugin>
 		</plugins>
+		<pluginManagement>
+			<plugins>
+				<plugin>
+					<groupId>io.fabric8</groupId>
+					<artifactId>docker-maven-plugin</artifactId>
+					<version>0.27.2</version>
+					<configuration>
+						<images>
+							<image>
+								<name>${docker.login}/${project.artifactId}:%l</name>
+								<alias>${project.artifactId}</alias>
+								<build>
+									<maintainer>Collonville Thomas collonville.thomas@gmail.com</maintainer>
+									<!-- <dockerFile>Dockerfile</dockerFile> -->
+									<assembly>
+										<mode>dir</mode>
+										<permissions>auto</permissions>
+										<targetDir>/</targetDir>
+										<descriptor>../assembly/assembly-docker.xml</descriptor>
+									</assembly>
+								</build>
+							</image>
+						</images>
+					</configuration>
+				</plugin>
+			</plugins>
+		</pluginManagement>
 	</build>
 	<distributionManagement>
 		<snapshotRepository>
@@ -125,8 +150,7 @@
 		</repository>
 		<site>
 			<id>siteweb</id>
-			<!-- defined in conf/settings.xml correspond au repertoire local ou sera 
-				deposer le contenu du build de la phase site -->
+			<!-- defined in conf/settings.xml correspond au repertoire local ou sera deposer le contenu du build de la phase site -->
 			<url>${local-siteweb-url}</url>
 		</site>
 	</distributionManagement>
