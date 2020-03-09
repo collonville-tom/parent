@@ -3,7 +3,7 @@
 	<groupId>org.tc.parent</groupId>
 	<artifactId>tc-parent</artifactId>
 	<name>${project.artifactId}-${project.version}</name>
-	<version>0.8.0</version>
+	<version>0.9.0-SNAPSHOT</version>
 	<packaging>pom</packaging>
 	<description>Pom parent des projets</description>
 	<properties>
@@ -15,11 +15,6 @@
 	<scm>
 		<connection>https://github.com/collonville-tom/tc-parent.git</connection>
 	</scm>
-	<ciManagement>
-		<system>jenkins</system>
-		<!-- defined in conf/settings.xml url de jenkins si existe -->
-		<url>${jenkins-url}</url>
-	</ciManagement>
 	<organization>
 		<name>org.tc</name>
 	</organization>
@@ -137,16 +132,14 @@
 	</build>
 	<distributionManagement>
 		<snapshotRepository>
-			<id>artifactory</id>
-			<name>artifactory-snapshots</name>
-			<!-- ${arti-url} defined in conf/settings.xml url d'artifactory -->
-			<url>${arti-url}/artifactory/tc-snapshot-local</url>
+			<id>github-release</id>
+			<name>github-snapshots</name>
+			<url>https://maven.pkg.github.com/collonville-tom/tc-delivery</url>
 		</snapshotRepository>
 		<repository>
-			<id>artifactory</id>
-			<name>artifactory-releases</name>
-			<!-- ${arti-url} defined in conf/settings.xml url d'artifactory -->
-			<url>${arti-url}/artifactory/tc-release-local</url>
+			<id>github-release</id>
+			<name>github-releases</name>
+			<url>https://maven.pkg.github.com/collonville-tom/tc-delivery</url>
 		</repository>
 		<site>
 			<id>siteweb</id>
