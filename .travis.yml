@@ -6,7 +6,7 @@ addons:
   sonarcloud:
     organization: "collonville-tom-sonar"
     token:
-      secure: "cd3f317b2dc0418833b75ccdd44d3303c953da8b"
+      secure: SONAR_TOKEN
 
 before_install: true
 install : true
