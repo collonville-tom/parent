@@ -4,9 +4,9 @@ jdk: openjdk8
 
 addons:
   sonarcloud:
-    organization: "collonville-tom-github"
+    organization: "collonville-tom-sonar"
     token:
-      secure: "748b7fca9a6fbfe5072f997a232f5c4e0ca0e6ca"
+      secure: "cd3f317b2dc0418833b75ccdd44d3303c953da8b"
 
 before_install: true
 install : true
