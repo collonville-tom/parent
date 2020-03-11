@@ -1,12 +1,11 @@
 sudo: false
 language: java
-jdk: openjdk8
+jdk: oraclejdk11
 
 addons:
   sonarcloud:
-    organization: "collonville-tom-sonar"
-    token:
-      secure: "cd3f317b2dc0418833b75ccdd44d3303c953da8b"
+    organization: "collonville-tom-github"
+    token: "cd3f317b2dc0418833b75ccdd44d3303c953da8b"
 
 before_install: true
 install : true
@@ -14,8 +13,8 @@ before_script : true
 
 script:
   - cp settings.xml $HOME/.m2/settings.xml
-  - mvn install
-  - mvn clean org.jacoco:jacoco-maven-plugin:prepare-agent package sonar:sonar
+  - mvn clean deploy
+  - mvn clean verify sonar:sonar
 
 cache:
   directories:
