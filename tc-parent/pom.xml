@@ -45,21 +45,28 @@
 				<version>3.1</version>
 				<configuration>
 					<verbose>true</verbose>
-					<source>1.8</source>
-					<target>1.8</target>
-					<testSource>1.8</testSource>
-					<testTarget>1.8</testTarget>
-					<arg>-XprintRounds -XprintProcessorInfo -Xlint -J-verbose</arg>
+					<source>13</source>
+					<target>13</target>
+					<testSource>13</testSource>
+					<testTarget>13</testTarget>
 					<encoding>UTF-8</encoding>
 					<fork>true</fork>
 					<!-- defined in conf/settings.xml -->
-					<executable>${JAVA_1_8_HOME}\bin\javac</executable>
+					<executable>${JAVA_HOME}\bin\javac</executable>
 				</configuration>
 			</plugin>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-javadoc-plugin</artifactId>
-				<version>2.9.1</version> <!-- le passage a la version 3.0.0 du plugin necessite une reconfig a cause des @ dans la doc -->
+				<version>3.1.1</version> <!-- le passage a la version 3.0.0 du plugin necessite une reconfig a cause des @ dans la doc -->
+				<configuration>
+					<tags>
+					<!--	<tag>
+							<name>track</name>
+							<placement>X</placement>
+						</tag>-->
+					</tags>
+				</configuration>
 				<executions>
 					<execution>
 						<id>attach-javadocs</id>
@@ -67,7 +74,7 @@
 							<goal>jar</goal>
 						</goals>
 						<configuration>
-							<additionalparam>-Xdoclint:none</additionalparam>
+							<doclint>none</doclint>
 						</configuration>
 					</execution>
 				</executions>
@@ -82,7 +89,7 @@
 							<groupId>org.apache.maven.plugins</groupId>
 							<artifactId>maven-javadoc-plugin</artifactId>
 							<configuration>
-								<additionalparam>-Xdoclint:none</additionalparam>
+								<doclint>none</doclint>
 							</configuration>
 						</plugin>
 					</reportPlugins>

@@ -4,13 +4,6 @@
 	xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0 http://maven.apache.org/xsd/settings-1.0.0.xsd">
 	<profiles>
 
-		<profile>
-			<id>compiler</id>
-			<properties>
-				<JAVA_1_8_HOME>${JAVA_HOME}</JAVA_1_8_HOME>
-			</properties>
-		</profile>
-
 
 		<profile>
 			<id>external</id>
@@ -70,6 +63,5 @@
 	<activeProfiles>
 		<activeProfile>external</activeProfile>
 		<activeProfile>github-release</activeProfile>
-		<activeProfile>compiler</activeProfile>
 	</activeProfiles>
 </settings>
