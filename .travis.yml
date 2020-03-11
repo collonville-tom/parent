@@ -1,6 +1,6 @@
 sudo: false
 language: java
-jdk: oraclejdk11
+jdk: openjdk15
 
 addons:
   sonarcloud:
