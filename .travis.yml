@@ -14,8 +14,8 @@ before_script : true
 
 script: 
   - cp settings.xml $HOME/.m2/settings.xml 
-  - mvn install
-  - mvn clean org.jacoco:jacoco-maven-plugin:prepare-agent package sonar:sonar
+  - mvn clean install
+  - mvn clean verify sonar:sonar -Pcoverage -Dsonar.projectKey=myorg_myrepo
 
 cache:
   directories:
