@@ -53,7 +53,7 @@
                     <arg>-XprintRounds -XprintProcessorInfo -Xlint -J-verbose</arg>
                     <encoding>UTF-8</encoding>
                     <fork>true</fork>
-                    <executable>${SETTINGS_JAVA_HOME}\bin\javac</executable>
+                    <executable>${SETTINGS_JAVA_HOME}/bin/javac</executable>
                 </configuration>
             </plugin>
             <plugin>
@@ -61,7 +61,7 @@
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>2.22.0</version>
                 <configuration>
-                    <jvm>${SETTINGS_JAVA_HOME}\bin\java</jvm>
+                    <jvm>${SETTINGS_JAVA_HOME}/bin/java</jvm>
                 </configuration>
             </plugin>
             <plugin>
@@ -75,7 +75,7 @@
                             <goal>jar</goal>
                         </goals>
                         <configuration>
-                            <javadocExecutable>${SETTINGS_JAVA_HOME}\bin\javadoc</javadocExecutable>
+                            <javadocExecutable>${SETTINGS_JAVA_HOME}/bin/javadoc</javadocExecutable>
                             <doclint>none</doclint>
                         </configuration>
                     </execution>
