@@ -1,62 +1,59 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <settings xmlns="http://maven.apache.org/SETTINGS/1.0.0"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0 http://maven.apache.org/xsd/settings-1.0.0.xsd">
-	<profiles>
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0 http://maven.apache.org/xsd/settings-1.0.0.xsd">
 
-		<profile>
-			<id>compiler</id>
-			<properties>
-				<siteweb-url>http://localhost/osgi</siteweb-url>
-				<jenkins-url>http://localhost/jenkins</jenkins-url>
-				<local-siteweb-url>file://localhost/var/www/osgi/</local-siteweb-url>
-				<JAVA_1_7_HOME>C:\Program Files\Java\jdk1.7.0_67</JAVA_1_7_HOME>
-				<JAVA_1_8_HOME>C:\Program Files\Java\jdk1.8.0_181</JAVA_1_8_HOME>
-				<JAVA_1_9_HOME>C:\Program Files\Java\jdk-9</JAVA_1_9_HOME>
+    <profiles>
+        <profile>
+            <id>compiler</id>
+            <properties>
+                <siteweb-url>http://localhost/osgi</siteweb-url>
+                <jenkins-url>http://localhost/jenkins</jenkins-url>
+                <local-siteweb-url>file://localhost/var/www/osgi/</local-siteweb-url>
+                <!--Cette variable permet de definir quel version java utiliser pour le build -->
+                <SETTINGS_JAVA_HOME>${JAVA_HOME}</SETTINGS_JAVA_HOME>
 
-				<!--Cette variable permet de definir quel version java utiliser pour le build -->
-				<SETTINGS_JAVA_HOME>${JAVA_HOME}</SETTINGS_JAVA_HOME>
-
-			</properties>
-		</profile>
-
-		<profile>
-			<id>external</id>
-			<repositories>
-				<repository>
-					<id>clojars</id>
-					<name>clojars</name>
-					<url>http://clojars.org/repo/</url>
-				</repository>
-				<repository>
-					<id>central</id>
-					<name>central</name>
-					<url>http://repo1.maven.org/maven2</url>
-				</repository>
-				<repository>
-					<id>mvnrepository</id>
-					<name>mvnrepository</name>
-					<url>http://www.mvnrepository.com</url>
-				</repository>
-				<repository>
-					<id>mvnrepository</id>
-					<name>mvnrepository</name>
-					<url>http://www.mvnrepository.com</url>
-				</repository>
-				<repository>
-					<id>github-release</id>
-					<name>github-release</name>
-					<url>https://maven.pkg.github.com/collonville-tom/tc-delivery</url>
-				</repository>
-			</repositories>
-		</profile>
+            </properties>
+        </profile>
+        <profile>
+            <id>external</id>
+            <repositories>
+                <repository>
+                    <id>clojars</id>
+                    <name>clojars</name>
+                    <url>http://clojars.org/repo/</url>
+                </repository>
+                <repository>
+                    <id>central</id>
+                    <name>central</name>
+                    <url>http://repo1.maven.org/maven2</url>
+                </repository>
+                <repository>
+                    <id>mvnrepository</id>
+                    <name>mvnrepository</name>
+                    <url>http://www.mvnrepository.com</url>
+                </repository>
+                <repository>
+                    <id>github-release</id>
+                    <name>github-release</name>
+                    <url>https://maven.pkg.github.com/collonville-tom/tc-delivery</url>
+                </repository>
+            </repositories>
+        </profile>
 
 
-	</profiles>
+    </profiles>
 
+    <servers>
+        <server>
+            <id>github-release</id>
+            <username>collonville-tom</username>
+            <password>05d24a071b1f55754fdc6bb64f089faa5feba4af</password>
+        </server>
+    </servers>
 
-	<activeProfiles>
-		<activeProfile>external</activeProfile>
-		<activeProfile>compiler</activeProfile>
-	</activeProfiles>
+    <activeProfiles>
+        <activeProfile>external</activeProfile>
+        <activeProfile>compiler</activeProfile>
+    </activeProfiles>
 </settings>
