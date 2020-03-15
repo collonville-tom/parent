@@ -136,12 +136,12 @@
         <snapshotRepository>
             <id>github-release</id>
             <name>github-snapshots</name>
-            <url>https://maven.pkg.github.com/collonville-tom/tc-delivery</url>
+            <url>${local-delivery-repository}</url>
         </snapshotRepository>
         <repository>
             <id>github-release</id>
             <name>github-releases</name>
-            <url>https://maven.pkg.github.com/collonville-tom/tc-delivery</url>
+            <url>${local-delivery-repository}</url>
         </repository>
         <site>
             <id>siteweb</id>

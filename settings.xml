@@ -36,7 +36,7 @@
                 <repository>
                     <id>github-release</id>
                     <name>github-release</name>
-                    <url>https://maven.pkg.github.com/collonville-tom/tc-delivery</url>
+                    <url>https://collonville-tom.github.io/tc-delivery/repositories/tc-release-local</url>
                 </repository>
             </repositories>
         </profile>
@@ -44,13 +44,6 @@
 
     </profiles>
 
-    <servers>
-        <server>
-            <id>github-release</id>
-            <username>collonville.thomas@gmail.com</username>
-            <password>c0ffc7c4432ae0b17f9f690f50cb0c02c32c4d8f</password>
-        </server>
-    </servers>
 
     <activeProfiles>
         <activeProfile>external</activeProfile>
