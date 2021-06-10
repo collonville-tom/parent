@@ -8,13 +8,6 @@
 	<packaging>pom</packaging>
 	<description>Pom module de tc-project</description>
 
-	<parent>
- 	  <groupId>org.tc.parent</groupId>
-	  <artifactId>tc-parent</artifactId>
-	  <version>0.9.0</version>
-	  <relativePath>tc-parent</relativePath>
-	</parent>
-
 	<modules>
 		<module>tc-parent</module> 
 		<module>tc-osgi-parent</module>
@@ -25,5 +18,20 @@
 		<module>tc-asciidoctor-html-parent</module>
 	</modules>
 
+  <distributionManagement>
+    <repository>
+      <id>gitlab-maven</id>
+      <url>${CI_API_V4_URL}/projects/${env.CI_PROJECT_ID}/packages/maven</url>
+    </repository>
+    <snapshotRepository>
+      <id>gitlab-maven</id>
+      <url>${CI_API_V4_URL}/projects/${env.CI_PROJECT_ID}/packages/maven</url>
+    </snapshotRepository>
+    <site>
+      <id>siteweb</id>
+      <!-- defined in conf/settings.xml correspond au repertoire local ou sera deposer le contenu du build de la phase site -->
+      <url>${local-siteweb-url}</url>
+    </site>
+  </distributionManagement>
 
 </project>
