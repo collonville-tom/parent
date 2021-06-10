@@ -8,12 +8,12 @@
 	<packaging>pom</packaging>
 	<description>Pom module de tc-project</description>
 
-<!--	<parent>
+	<parent>
  	  <groupId>org.tc.parent</groupId>
 	  <artifactId>tc-parent</artifactId>
 	  <version>0.9.0</version>
 	  <relativePath>tc-parent</relativePath>
-	</parent>-->
+	</parent>
 
 	<modules>
 		<module>tc-parent</module> 
