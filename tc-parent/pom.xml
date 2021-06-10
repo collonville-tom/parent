@@ -113,6 +113,7 @@
           <artifactId>docker-maven-plugin</artifactId>
           <version>0.36.0</version>
           <configuration>
+            <skipPom>true</skipPom>
             <images>
               <image>
                 <name>${docker.login}/${project.artifactId}:%l</name>
