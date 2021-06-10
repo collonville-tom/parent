@@ -135,7 +135,6 @@
     </pluginManagement>
   </build>
   <distributionManagement>
-<distributionManagement>
     <repository>
       <id>gitlab-maven</id>
       <url>${CI_API_V4_URL}/projects/${env.CI_PROJECT_ID}/packages/maven</url>
