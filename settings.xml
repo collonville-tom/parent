@@ -3,6 +3,19 @@
   xmlns="http://maven.apache.org/SETTINGS/1.0.0"
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
           xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0 http://maven.apache.org/xsd/settings-1.0.0.xsd">
+  <servers>
+    <server>
+      <id>gitlab-maven</id>
+      <configuration>
+        <httpHeaders>
+          <property>
+            <name>Job-Token</name>
+            <value>${env.CI_JOB_TOKEN}</value>
+          </property>
+        </httpHeaders>
+      </configuration>
+    </server>
+  </servers>
   <profiles>
     <profile>
       <id>compiler</id>
@@ -32,11 +45,12 @@
           <name>mvnrepository</name>
           <url>https://www.mvnrepository.com</url>
         </repository>
-        <repository>
-          <id>github-release</id>
-          <name>github-release</name>
-          <url>https://collonville-tom.github.io/tc-delivery/repositories/tc-release-local</url>
-        </repository>
+        <repositories>
+          <repository>
+            <id>gitlab-maven</id>
+            <url>$env{CI_API_V4_URL}/projects/${env.CI_PROJECT_ID}/packages/maven</url>
+          </repository>
+        </repositories>
       </repositories>
     </profile>
   </profiles>

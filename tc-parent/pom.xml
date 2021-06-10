@@ -135,16 +135,15 @@
     </pluginManagement>
   </build>
   <distributionManagement>
-    <snapshotRepository>
-      <id>github-release</id>
-      <name>github-snapshots</name>
-      <url>${local-delivery-repository}</url>
-    </snapshotRepository>
+<distributionManagement>
     <repository>
-      <id>github-release</id>
-      <name>github-releases</name>
-      <url>${local-delivery-repository}</url>
+      <id>gitlab-maven</id>
+      <url>${CI_API_V4_URL}/projects/${env.CI_PROJECT_ID}/packages/maven</url>
     </repository>
+    <snapshotRepository>
+      <id>gitlab-maven</id>
+      <url>${CI_API_V4_URL}/projects/${env.CI_PROJECT_ID}/packages/maven</url>
+    </snapshotRepository>
     <site>
       <id>siteweb</id>
       <!-- defined in conf/settings.xml correspond au repertoire local ou sera deposer le contenu du build de la phase site -->
