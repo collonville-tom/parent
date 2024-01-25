@@ -1,31 +1,31 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-	<modelVersion>4.0.0</modelVersion>
-	<groupId>org.tc.module</groupId>
-	<artifactId>tc-parent-module</artifactId>
-	<name>${project.artifactId}-${project.version}</name>
-	<version>0.3.0</version>
-	<packaging>pom</packaging>
-	<description>Pom module de tc-project</description>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>org.tc.module</groupId>
+  <artifactId>parent-module</artifactId>
+  <name>${project.artifactId}-${project.version}</name>
+  <version>0.1.0-SNAPSHOT</version>
+  <packaging>pom</packaging>
+  <description>Pom module des project parents</description>
 
-	<modules>
-		<module>tc-parent</module> 
-		<module>tc-osgi-parent</module>
-     	<module>tc-jee-parent</module>  
-		<module>tc-maven-plugin-parent</module>
-        <module>tc-android-parent</module>
-		<module>tc-asciidoctor-pdf-parent</module> 
-		<module>tc-asciidoctor-html-parent</module>
-	</modules>
+  <modules>
+    <module>parent</module>
+    <module>osgi-parent</module>
+    <module>jee-parent</module>
+    <module>maven-plugin-parent</module>
+    <module>android-parent</module>
+    <module>asciidoctor-pdf-parent</module>
+    <module>asciidoctor-html-parent</module>
+  </modules>
 
   <distributionManagement>
     <repository>
-      <id>gitlab-maven</id>
-      <url>${CI_API_V4_URL}/projects/${env.CI_PROJECT_ID}/packages/maven</url>
+      <id>home-maven</id>
+      <url>http://collonvillethomas.freeboxos.fr:8888/nexus/content/repositories/releases/</url>
     </repository>
     <snapshotRepository>
-      <id>gitlab-maven</id>
-      <url>${CI_API_V4_URL}/projects/${env.CI_PROJECT_ID}/packages/maven</url>
+      <id>home-maven</id>
+      <url>http://collonvillethomas.freeboxos.fr:8888/nexus/content/repositories/snapshots/</url>
     </snapshotRepository>
     <site>
       <id>siteweb</id>
