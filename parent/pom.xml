@@ -9,7 +9,7 @@
   <description>Pom parent des projets</description>
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <docker.login>collonvtom</docker.login>
+    <docker.login>collonvillethomas.freeboxos.fr:5000</docker.login>
   </properties>
   <!-- defined in conf/settings.xml url pour consulter la prod du build de phase site -->
   <url>${local-siteweb-url}</url>
@@ -114,7 +114,7 @@
             <skipPom>true</skipPom>
             <images>
               <image>
-                <name>${docker.login}/${project.artifactId}:%l</name>
+                <name>${docker.login}/${project.artifactId}:%v</name>
                 <alias>${project.artifactId}</alias>
                 <build>
                   <maintainer>Collonville Thomas collonville.thomas@gmail.com</maintainer>
