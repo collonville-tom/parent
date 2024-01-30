@@ -4,25 +4,25 @@
 	<groupId>org.tc.module</groupId>
 	<artifactId>tc-parent-module</artifactId>
 	<name>${project.artifactId}-${project.version}</name>
-	<version>0.2.0</version>
 	<packaging>pom</packaging>
+	<version>0.10.0-SNAPSHOT</version>
 	<description>Pom module de tc-project</description>
 
 	<parent>
  	  <groupId>org.tc.parent</groupId>
 	  <artifactId>tc-parent</artifactId>
-	  <version>0.8.0</version>
+	  <version>0.10.0-SNAPSHOT</version>
 	  <relativePath>tc-parent</relativePath>
 	</parent>
 
 	<modules>
 		<module>tc-parent</module> 
 		<module>tc-osgi-parent</module>
-     	<module>tc-jee-parent</module>  
-		<module>tc-maven-plugin-parent</module>
-        <module>tc-android-parent</module>
-		<module>tc-asciidoctor-pdf-parent</module> 
-		<module>tc-asciidoctor-html-parent</module>
+<!--     	<module>tc-jee-parent</module>  -->
+<!--		<module>tc-maven-plugin-parent</module>-->
+<!--        <module>tc-android-parent</module>-->
+<!--		<module>tc-asciidoctor-pdf-parent</module> -->
+<!--		<module>tc-asciidoctor-html-parent</module>-->
 	</modules>
 
 

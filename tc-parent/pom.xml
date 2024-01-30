@@ -1,16 +1,19 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>org.tc.parent</groupId>
 	<artifactId>tc-parent</artifactId>
 	<name>${project.artifactId}-${project.version}</name>
-	<version>0.8.0</version>
+	<version>0.10.0-SNAPSHOT</version>
 	<packaging>pom</packaging>
 	<description>Pom parent des projets</description>
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<docker.login>collonvtom</docker.login>
+		<docker.login>collonvillethomas.freeboxos.fr:5000</docker.login>
 	</properties>
-	<!-- defined in conf/settings.xml url pour consulter la prod du build de phase site -->
+	<!-- defined in conf/settings.xml url pour consulter la prod du build de
+	phase site -->
 	<url>${local-siteweb-url}</url>
 	<scm>
 		<connection>https://github.com/collonville-tom/tc-parent.git</connection>
@@ -64,7 +67,8 @@
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-javadoc-plugin</artifactId>
-				<version>2.9.1</version> <!-- le passage a la version 3.0.0 du plugin necessite une reconfig a cause des @ dans la doc -->
+				<version>2.9.1</version> <!-- le passage a la version 3.0.0 du
+				plugin necessite une reconfig a cause des @ dans la doc -->
 				<executions>
 					<execution>
 						<id>attach-javadocs</id>
@@ -119,13 +123,15 @@
 								<name>${docker.login}/${project.artifactId}:%l</name>
 								<alias>${project.artifactId}</alias>
 								<build>
-									<maintainer>Collonville Thomas collonville.thomas@gmail.com</maintainer>
+									<maintainer>Collonville Thomas
+										collonville.thomas@gmail.com</maintainer>
 									<!-- <dockerFile>Dockerfile</dockerFile> -->
 									<assembly>
 										<mode>dir</mode>
 										<permissions>auto</permissions>
 										<targetDir>/</targetDir>
-										<descriptor>../assembly/assembly-docker.xml</descriptor>
+										<descriptor>
+											../assembly/assembly-docker.xml</descriptor>
 									</assembly>
 								</build>
 							</image>
@@ -136,21 +142,22 @@
 		</pluginManagement>
 	</build>
 	<distributionManagement>
-		<snapshotRepository>
-			<id>artifactory</id>
-			<name>artifactory-snapshots</name>
-			<!-- ${arti-url} defined in conf/settings.xml url d'artifactory -->
-			<url>${arti-url}/artifactory/tc-snapshot-local</url>
-		</snapshotRepository>
 		<repository>
-			<id>artifactory</id>
-			<name>artifactory-releases</name>
-			<!-- ${arti-url} defined in conf/settings.xml url d'artifactory -->
-			<url>${arti-url}/artifactory/tc-release-local</url>
+			<id>home-maven</id>
+			<url>
+				http://collonvillethomas.freeboxos.fr:8888/nexus/content/repositories/releases/
+			</url>
 		</repository>
+		<snapshotRepository>
+			<id>home-maven</id>
+			<url>
+				http://collonvillethomas.freeboxos.fr:8888/nexus/content/repositories/snapshots/
+			</url>
+		</snapshotRepository>
 		<site>
 			<id>siteweb</id>
-			<!-- defined in conf/settings.xml correspond au repertoire local ou sera deposer le contenu du build de la phase site -->
+			<!-- defined in conf/settings.xml correspond au repertoire local ou
+			sera deposer le contenu du build de la phase site -->
 			<url>${local-siteweb-url}</url>
 		</site>
 	</distributionManagement>

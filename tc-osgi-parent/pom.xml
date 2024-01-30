@@ -3,7 +3,7 @@
 	<groupId>org.tc.parent</groupId>
 	<artifactId>tc-osgi-parent</artifactId>
 	<name>${project.artifactId}-${project.version}</name>
-	<version>0.8.1</version>
+	<version>0.10.0-SNAPSHOT</version>
 	<packaging>pom</packaging>
 	<description>Pom parent des projets tc-osgi</description>
 
@@ -11,7 +11,7 @@
 	<parent>
 		<groupId>org.tc.parent</groupId>
 		<artifactId>tc-parent</artifactId>
-		<version>0.8.0</version>
+		<version>0.10.0-SNAPSHOT</version>
 		<relativePath>../tc-parent</relativePath>
 	</parent>
 	
