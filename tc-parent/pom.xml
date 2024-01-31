@@ -61,7 +61,7 @@
 					<encoding>UTF-8</encoding>
 					<fork>true</fork>
 					<!-- defined in conf/settings.xml -->
-					<executable>${JAVA_1_8_HOME}\bin\javac</executable>
+					<executable>${SETTINGS_JAVA_HOME}\bin\javac</executable>
 				</configuration>
 			</plugin>
 			<plugin>
@@ -123,15 +123,14 @@
 								<name>${docker.login}/${project.artifactId}:%l</name>
 								<alias>${project.artifactId}</alias>
 								<build>
-									<maintainer>Collonville Thomas
-										collonville.thomas@gmail.com</maintainer>
+									<maintainer>Collonville Thomas cllonville.thomas@gmail.com</maintainer>
 									<!-- <dockerFile>Dockerfile</dockerFile> -->
 									<assembly>
 										<mode>dir</mode>
 										<permissions>auto</permissions>
 										<targetDir>/</targetDir>
 										<descriptor>
-											../assembly/assembly-docker.xml</descriptor>
+											assembly-docker.xml</descriptor>
 									</assembly>
 								</build>
 							</image>
