@@ -5,7 +5,7 @@
 	<groupId>org.tc.parent</groupId>
 	<artifactId>tc-parent</artifactId>
 	<name>${project.artifactId}-${project.version}</name>
-	<version>0.10.0</version>
+	<version>0.11.0-SNAPSHOT</version>
 	<packaging>pom</packaging>
 	<description>Pom parent des projets</description>
 	<properties>
@@ -123,14 +123,12 @@
 								<name>${docker.login}/${project.artifactId}:%l</name>
 								<alias>${project.artifactId}</alias>
 								<build>
-									<maintainer>Collonville Thomas cllonville.thomas@gmail.com</maintainer>
-									<!-- <dockerFile>Dockerfile</dockerFile> -->
+									<maintainer>Collonville Thomas collonville.thomas@gmail.com</maintainer>
 									<assembly>
 										<mode>dir</mode>
 										<permissions>auto</permissions>
 										<targetDir>/</targetDir>
-										<descriptor>
-											assembly-docker.xml</descriptor>
+										<descriptor>assembly-docker.xml</descriptor>
 									</assembly>
 								</build>
 							</image>
@@ -214,8 +212,8 @@
 			</dependency>
 			<dependency>
 				<groupId>org.mockito</groupId>
-				<artifactId>mockito-all</artifactId>
-				<version>1.9.5</version>
+				<artifactId>mockito-core</artifactId>
+				<version>3.3.3</version>
 				<scope>test</scope>
 			</dependency>
 		</dependencies>
