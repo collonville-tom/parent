@@ -53,10 +53,10 @@
 				<version>3.1</version>
 				<configuration>
 					<verbose>true</verbose>
-					<source>1.8</source>
-					<target>1.8</target>
-					<testSource>1.8</testSource>
-					<testTarget>1.8</testTarget>
+					<source>21</source>
+					<target>21</target>
+					<testSource>21</testSource>
+					<testTarget>21</testTarget>
 					<arg>-XprintRounds -XprintProcessorInfo -Xlint -J-verbose</arg>
 					<encoding>UTF-8</encoding>
 					<fork>true</fork>
