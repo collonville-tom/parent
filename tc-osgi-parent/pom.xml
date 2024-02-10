@@ -19,10 +19,12 @@
 
 	<build>
 		<plugins>
+<!--			Permet d'initialiser la variable versiontimestamp 
+				qui entre dans la datation du build pour docker-->
 			<plugin>
 				<groupId>org.codehaus.mojo</groupId>
 				<artifactId>buildnumber-maven-plugin</artifactId>
-				<version>1.4</version>
+				<version>3.1.0</version>
 				<executions>
 					<execution>
 						<id>set-specific-timestamp</id>
@@ -36,50 +38,6 @@
 					<timestampFormat>yyyyMMddHHmm</timestampFormat>
 					<timestampPropertyName>versiontimestamp</timestampPropertyName>
 				</configuration>
-			</plugin>
-			<plugin>
-				<!-- Pour realiser les test avec un pseudo repertoire de conf -->
-				<artifactId>maven-resources-plugin</artifactId>
-				<version>2.6</version>
-				<executions>
-					<execution>
-						<id>copy-resources</id>
-						<!-- here the phase you need -->
-						<phase>generate-test-resources</phase>
-						<goals>
-							<goal>copy-resources</goal>
-						</goals>
-						<configuration>
-							<outputDirectory>${basedir}/bundles/${project.artifactId}-${project.version}</outputDirectory>
-							<resources>
-								<resource>
-									<directory>src/main/resources</directory>
-									<filtering>true</filtering>
-								</resource>
-							</resources>
-						</configuration>
-					</execution>
-				</executions>
-			</plugin>
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-dependency-plugin</artifactId>
-				<version>2.5.1</version>
-				<executions>
-					<execution>
-						<id>copy-dependencies</id>
-						<phase>package</phase>
-						<goals>
-							<goal>copy-dependencies</goal>
-						</goals>
-						<configuration>
-							<outputDirectory>${project.build.directory}</outputDirectory>
-							<overWriteReleases>false</overWriteReleases>
-							<overWriteSnapshots>false</overWriteSnapshots>
-							<overWriteIfNewer>true</overWriteIfNewer>
-						</configuration>
-					</execution>
-				</executions>
 			</plugin>
 		</plugins>
 
@@ -111,7 +69,7 @@
 				<plugin>
 					<groupId>org.apache.maven.plugins</groupId>
 					<artifactId>maven-jar-plugin</artifactId>
-					<version>2.3.1</version>
+					<version>3.3.0</version>
 					<configuration>
 						<archive>
 							<manifest>
@@ -142,9 +100,57 @@
 					</executions>
 				</plugin>
 				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-assembly-plugin</artifactId>
+					<version>3.6.0</version>
+					<configuration>
+						<appendAssemblyId>true</appendAssemblyId>
+						<attach>true</attach>
+						<finalName>${project.artifactId}-${project.version}</finalName>
+						<ignoreDirFormatExtensions>true</ignoreDirFormatExtensions>
+						<outputDirectory>${project.build.directory}</outputDirectory>
+						<archive>
+							<manifest>
+								<addClasspath>true</addClasspath>
+								<classpathPrefix>./</classpathPrefix>
+							</manifest>
+						</archive>
+					</configuration>
+					<executions>
+						<!-- prepare Packaging debian -->
+						<execution>
+							<id>assembly-debian</id>
+							<phase>prepare-package</phase>
+							<goals>
+								<goal>single</goal>
+							</goals>
+							<configuration>
+								<appendAssemblyId>false</appendAssemblyId>
+								<descriptors>
+									<descriptor>src/main/assembly/assembly-debian.xml</descriptor>
+								</descriptors>
+							</configuration>
+						</execution>
+						<!-- Packaging targz-->
+						<execution>
+							<id>assembly-targz</id>
+							<phase>package</phase>
+							<goals>
+								<goal>single</goal>
+							</goals>
+							<configuration>
+								<appendAssemblyId>false</appendAssemblyId>
+								<descriptors>
+									<descriptor>src/main/assembly/assembly-targz.xml</descriptor>
+								</descriptors>
+							</configuration>
+						</execution>
+					</executions>
+				</plugin>
+				<plugin>
 					<artifactId>jdeb</artifactId>
 					<groupId>org.vafer</groupId>
-					<version>1.5</version>
+					<version>1.10</version>
 					<executions>
 						<execution>
 							<phase>package</phase>
@@ -165,53 +171,6 @@
 										</mapper>
 									</data>
 								</dataSet>
-							</configuration>
-						</execution>
-					</executions>
-				</plugin>
-				<plugin>
-					<groupId>org.apache.maven.plugins</groupId>
-					<artifactId>maven-assembly-plugin</artifactId>
-					<version>2.5.3</version>
-					<configuration>
-						<appendAssemblyId>true</appendAssemblyId>
-						<attach>true</attach>
-						<finalName>${project.artifactId}-${project.version}</finalName>
-						<ignoreDirFormatExtensions>true</ignoreDirFormatExtensions>
-						<outputDirectory>${project.build.directory}</outputDirectory>
-						<archive>
-							<manifest>
-								<addClasspath>true</addClasspath>
-								<classpathPrefix>./</classpathPrefix>
-							</manifest>
-						</archive>
-					</configuration>
-					<executions>
-						<!-- Packaging debian -->
-						<execution>
-							<id>assembly-debian</id>
-							<phase>prepare-package</phase>
-							<goals>
-								<goal>single</goal>
-							</goals>
-							<configuration>
-								<appendAssemblyId>false</appendAssemblyId>
-								<descriptors>
-									<descriptor>src/main/assembly/assembly-debian.xml</descriptor>
-								</descriptors>
-							</configuration>
-						</execution>
-						<execution>
-							<id>assembly-targz</id>
-							<phase>package</phase>
-							<goals>
-								<goal>single</goal>
-							</goals>
-							<configuration>
-								<appendAssemblyId>false</appendAssemblyId>
-								<descriptors>
-									<descriptor>src/main/assembly/assembly-targz.xml</descriptor>
-								</descriptors>
 							</configuration>
 						</execution>
 					</executions>
