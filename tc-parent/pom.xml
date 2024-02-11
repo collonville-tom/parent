@@ -57,10 +57,7 @@
 					<target>21</target>
 					<testSource>21</testSource>
 					<testTarget>21</testTarget>
-<!--					<arg>-XprintRounds -XprintProcessorInfo -Xlint -J-verbose</arg>-->
 					<encoding>UTF-8</encoding>
-<!--					<fork>true</fork>-->
-					<!-- defined in conf/settings.xml -->
 					<executable>${SETTINGS_JAVA_HOME}\bin\javac</executable>
 				</configuration>
 			</plugin>

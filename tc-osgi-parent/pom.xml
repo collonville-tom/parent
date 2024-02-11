@@ -47,7 +47,8 @@
 					<groupId>org.apache.felix</groupId>
 					<artifactId>maven-bundle-plugin</artifactId>
 					<version>5.1.9</version>
-					<extensions>true</extensions>
+<!--					permet de gerer le packaging bundle-->
+					<extensions>true</extensions> 
 					<configuration>
 						<instructions>
 							<Bundle-SymbolicName>${project.artifactId}</Bundle-SymbolicName>
@@ -109,12 +110,6 @@
 						<finalName>${project.artifactId}-${project.version}</finalName>
 						<ignoreDirFormatExtensions>true</ignoreDirFormatExtensions>
 						<outputDirectory>${project.build.directory}</outputDirectory>
-						<archive>
-							<manifest>
-								<addClasspath>true</addClasspath>
-								<classpathPrefix>./</classpathPrefix>
-							</manifest>
-						</archive>
 					</configuration>
 					<executions>
 						<!-- prepare Packaging debian -->
