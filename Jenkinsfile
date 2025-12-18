@@ -9,7 +9,7 @@ pipeline {
     
     environment {
         MAVEN_HOME = '/usr/share/maven'
-        JAVA_HOME = '/opt/java/openjdk'
+        JAVA_HOME = '/opt/java/opeonjdk'
         PATH = "${MAVEN_HOME}/bin:${JAVA_HOME}/bin:${PATH}"
     }
     
