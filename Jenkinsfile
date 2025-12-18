@@ -88,7 +88,7 @@ pipeline {
                             
                             # Ajouter le serveur aux hosts connus (éviter la confirmation)
                             ssh-keyscan -H 192.168.0.132 >> ~/.ssh/known_hosts 2>/dev/null || true
-                            
+                            pwd
                             cd  /tmp/workspace/parent/tc-parent_${BRANCH_NAME}/target
                             scp -r ./ ${SITE_USER}@192.168.0.132:/mnt/nfs_storage_client/docker_share/tc-public-share/html/projets/
 
