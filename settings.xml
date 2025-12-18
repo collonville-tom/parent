@@ -9,19 +9,12 @@
       <username>${jenkins-username}</username>
       <password>${jenkins-pwd}</password>
     </server>
-    <server>
-      <id>siteweb</id>
-      <!-- Credentials pour le déploiement HTTP du site -->
-      <username>${site-username}</username>
-      <password>${site-pwd}</password>
-    </server>
   </servers>
   <profiles>
     <profile>
       <id>compiler</id>
       <properties>
         <jenkins-url>http://collonvillethomas.freeboxos.fr:58153</jenkins-url>
-        <siteweb-url>https://collonvillethomas.freeboxos.fr/public/projets/${branch-name}/parent/</siteweb-url>
         <SETTINGS_JAVA_HOME>${JAVA_HOME}</SETTINGS_JAVA_HOME>
       </properties>
     </profile>
