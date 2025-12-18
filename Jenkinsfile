@@ -29,7 +29,7 @@ pipeline {
             steps {
                 sh 'mvn -version' 
                 withCredentials([usernamePassword(credentialsId: 'jenkins2nexus-deployement', usernameVariable: 'MAVEN_USER', passwordVariable: 'MAVEN_PWD')]) {
-                    sh 'mvn clean deploy -Djenkins-username=$MAVEN_USER -Djenkins-pwd=$MAVEN_PWD -s setting.xml' 
+                    sh 'mvn clean deploy -Djenkins-username=$MAVEN_USER -Djenkins-pwd=$MAVEN_PWD -s settings.xml' 
                 }
             }
         }
