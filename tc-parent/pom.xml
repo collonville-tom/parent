@@ -16,7 +16,7 @@
 	phase site -->
 	<url>${local-siteweb-url}</url>
 	<scm>
-		<connection>https://github.com/collonville-tom/tc-parent.git</connection>
+		<connection>https://github.com/collonville-tom/parent.git</connection>
 	</scm>
 	<ciManagement>
 		<system>jenkins</system>
