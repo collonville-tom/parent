@@ -76,7 +76,7 @@ pipeline {
                 MAVEN_OPTS = '-Dmaven.repo.local=/tmp/workspace/maven-cache'
             }
             steps {
-                sh 'mvn site:deploy -Dlocal-siteweb-url:http://home_tc-public-share/projets/ -s settings.xml'
+                sh 'mvn site:deploy -Ddeploy-siteweb-url=http://home_tc-public-share/projets/ -s settings.xml'
             }
         }
         
