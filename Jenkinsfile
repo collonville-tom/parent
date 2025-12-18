@@ -91,7 +91,7 @@ pipeline {
                 MAVEN_OPTS = '-Dmaven.repo.local=/var/maven-cache'
             }
             steps {
-                sh 'ls /var/run/osgi'
+                sh 'ls /tmp/site'
             }
         }
         
