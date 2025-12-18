@@ -14,14 +14,14 @@ pipeline {
     }
     
     stages {
-        stage('Checkout') {
+        /*stage('Checkout') {
             steps {
                 script {
                     echo "Branche actuelle: ${BRANCH_NAME}"
                 }
                 checkout scm
             }
-        }
+        }*/
         
         stage('Build') {
             agent {
@@ -36,8 +36,7 @@ pipeline {
                 MAVEN_OPTS = '-Dmaven.repo.local=/var/maven-cache'
             }
             steps {
-                // Le workspace est monté automatiquement par Jenkins maintenant qu'il connait le chemin physique
-                sh 'ls -la' // Tu devrais voir 'test_file' et le 'pom.xml'
+                sh 'mvn -version' 
                 sh 'mvn clean '
             }
         }
