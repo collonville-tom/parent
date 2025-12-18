@@ -49,8 +49,10 @@ pipeline {
 
         stage('Deploy Artifact') {
             when {
-                branch 'develop'
-                branch 'main'
+                anyOf {
+                    branch 'develop'
+                    branch 'main'
+                }
             }
             agent {
                 docker { 
@@ -70,8 +72,10 @@ pipeline {
         }
         stage('Build Site') {
             when {
-                branch 'develop'
-                branch 'main'
+                anyOf {
+                    branch 'develop'
+                    branch 'main'
+                }
             }
             agent {
                 docker { 
@@ -89,8 +93,10 @@ pipeline {
         }
         stage('Staging Site') {
             when {
-                branch 'develop'
-                branch 'main'
+                anyOf {
+                    branch 'develop'
+                    branch 'main'
+                }
             }
             agent {
                 docker { 
@@ -108,8 +114,10 @@ pipeline {
         }
         stage('Deploy Site') {
             when {
-                branch 'develop'
-                branch 'main'
+                anyOf {
+                    branch 'develop'
+                    branch 'main'
+                }
             }
             agent {
                 docker { 
