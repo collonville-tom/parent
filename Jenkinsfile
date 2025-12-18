@@ -9,20 +9,12 @@ pipeline {
     
     environment {
         MAVEN_HOME = '/usr/share/maven'
-        JAVA_HOME = '/usr/lib/jvm/java-21-openjdk'
+        JAVA_HOME = tool('java-21-openjdk') ?: '/usr/lib/jvm/java-21-openjdk'
         PATH = "${MAVEN_HOME}/bin:${JAVA_HOME}/bin:${PATH}"
     }
     
     stages {
-        /*stage('Checkout') {
-            steps {
-                script {
-                    echo "Branche actuelle: ${BRANCH_NAME}"
-                }
-                checkout scm
-            }
-        }*/
-        
+       
         stage('Build') {
             agent {
                 docker { 
