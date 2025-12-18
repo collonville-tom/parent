@@ -14,8 +14,7 @@ pipeline {
     }
     
     stages {
-       
-         stage('Build') {
+        stage('Clean and Verify') {
             agent {
                 docker { 
                     image 'maven:3.9.6-eclipse-temurin-21'
@@ -27,7 +26,23 @@ pipeline {
                 MAVEN_OPTS = '-Dmaven.repo.local=/tmp/workspace/maven-cache'
             }
             steps {
-                sh 'mvn compile -s settings.xml'
+                sh 'mvn clean verify -s settings.xml'
+            }
+            
+        }
+         stage('Compile and install') {
+            agent {
+                docker { 
+                    image 'maven:3.9.6-eclipse-temurin-21'
+                    args '-v maven-repo:/tmp/workspace/maven-cache'
+                    reuseNode true 
+                }
+            }
+            environment {
+                MAVEN_OPTS = '-Dmaven.repo.local=/tmp/workspace/maven-cache'
+            }
+            steps {
+                sh 'mvn install -s settings.xml'
             }
             
         }
@@ -86,6 +101,9 @@ pipeline {
                     reuseNode true 
                 }
             }
+            environment {
+                SERVER_IP = credentials('hostname_server')  // Référence le credential Jenkins
+            }
             steps {
                 script {
                     echo "📤 Déploiement du site Maven via SCP vers https://collonvillethomas.freeboxos.fr/public/projets/"
@@ -102,10 +120,10 @@ pipeline {
                             chmod 600 ~/.ssh/id_rsa
                             
                             # Ajouter le serveur aux hosts connus (éviter la confirmation)
-                            ssh-keyscan -H 192.168.0.132 >> ~/.ssh/known_hosts 2>/dev/null || true
+                            ssh-keyscan -H ${SERVER_IP} >> ~/.ssh/known_hosts 2>/dev/null || true
                             pwd
                             cd  /tmp/workspace/tc-parent_${BRANCH_NAME}/target/staging
-                            scp -r ./ ${SITE_USER}@192.168.0.132:/mnt/nfs_storage_client/docker_share/tc-public-share/html/projets/
+                            scp -r ./ ${SITE_USER}@${SERVER_IP}:/mnt/nfs_storage_client/docker_share/tc-public-share/html/projets/
 
                             # Nettoyer la clé temporaire
                             rm -f ~/.ssh/id_rsa
