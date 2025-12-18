@@ -91,7 +91,7 @@ pipeline {
                 MAVEN_OPTS = '-Dmaven.repo.local=/var/maven-cache'
             }
             steps {
-                sh 'ls /tmp/site'
+                sh 'ls /tmp/workspace/projets'
             }
         }
         
