@@ -67,16 +67,38 @@ pipeline {
         stage('Deploy Site') {
             agent {
                 docker { 
-                    image 'maven:3.9.6-eclipse-temurin-21'
-                    args '-v maven-repo:/tmp/workspace/maven-cache'
+                    image 'alpine:latest'
                     reuseNode true 
                 }
             }
-            environment {
-                MAVEN_OPTS = '-Dmaven.repo.local=/tmp/workspace/maven-cache'
-            }
             steps {
-                sh 'mvn site:deploy -s settings.xml'
+                script {
+                    echo "📤 Déploiement du site Maven via SCP vers https://collonvillethomas.freeboxos.fr/public/projets/"
+                    
+                    // Déployer le site généré via SCP avec clé SSH
+                    withCredentials([sshUserPrivateKey(credentialsId: 'home-ssh-key', keyFileVariable: 'SSH_KEY', usernameVariable: 'SITE_USER')]) {
+                        sh '''
+                            # Installer openssh-client dans Alpine
+                            apk add --no-cache openssh-client
+                            
+                            # Créer un répertoire temporaire pour la clé SSH
+                            mkdir -p ~/.ssh
+                            cp $SSH_KEY ~/.ssh/id_rsa
+                            chmod 600 ~/.ssh/id_rsa
+                            
+                            # Ajouter le serveur aux hosts connus (éviter la confirmation)
+                            ssh-keyscan -H 192.168.0.132 >> ~/.ssh/known_hosts 2>/dev/null || true
+                            
+                            cd  /tmp/workspace/parent/tc-parent/target
+                            scp -r ./ Leuviah:/mnt/nfs_storage_client/docker_share/tc-public-share/html/projets/
+
+                            # Nettoyer la clé temporaire
+                            rm -f ~/.ssh/id_rsa
+                            
+                            echo "✅ Site déployé avec succès sur https://collonvillethomas.freeboxos.fr/public/projets/"
+                        '''
+                    }
+                }
             }
         }
         

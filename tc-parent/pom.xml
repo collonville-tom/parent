@@ -12,15 +12,11 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<docker.login>collonvillethomas.freeboxos.fr:5000</docker.login>
 	</properties>
-	<!-- defined in conf/settings.xml url pour consulter la prod du build de
-	phase site -->
-	<url>${local-siteweb-url}</url>
 	<scm>
 		<connection>https://github.com/collonville-tom/parent.git</connection>
 	</scm>
 	<ciManagement>
 		<system>jenkins</system>
-		<!-- defined in conf/settings.xml url de jenkins si existe -->
 		<url>${jenkins-url}</url>
 	</ciManagement>
 	<organization>
@@ -147,12 +143,6 @@
 				http://collonvillethomas.freeboxos.fr:8888/nexus/content/repositories/snapshots/
 			</url>
 		</snapshotRepository>
-		<site>
-			<id>siteweb</id>
-			<!-- defined in conf/settings.xml correspond au repertoire local ou
-			sera deposer le contenu du build de la phase site -->
-			<url>${local-siteweb-url}</url>
-		</site>
 	</distributionManagement>
 	<reporting>
 		<plugins>
