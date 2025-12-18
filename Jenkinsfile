@@ -15,7 +15,7 @@ pipeline {
     
     stages {
        
-/*         stage('Build') {
+         stage('Build') {
             agent {
                 docker { 
                     image 'maven:3.9.6-eclipse-temurin-21'
@@ -27,7 +27,7 @@ pipeline {
                 MAVEN_OPTS = '-Dmaven.repo.local=/tmp/workspace/maven-cache'
             }
             steps {
-                sh 'mvn compile'
+                sh 'mvn compile -s settings.xml'
             }
             
         }
@@ -48,7 +48,7 @@ pipeline {
                     sh 'mvn deploy -Djenkins-username=$MAVEN_USER -Djenkins-pwd=$MAVEN_PWD -s settings.xml' 
                 }
             }
-        } */
+        }
         stage('Build Site') {
             agent {
                 docker { 
@@ -61,7 +61,7 @@ pipeline {
                 MAVEN_OPTS = '-Dmaven.repo.local=/tmp/workspace/maven-cache'
             }
             steps {
-                sh 'mvn site:site'
+                sh 'mvn site:site -s settings.xml'
             }
         }
         stage('Staging Site') {
@@ -76,7 +76,7 @@ pipeline {
                 MAVEN_OPTS = '-Dmaven.repo.local=/tmp/workspace/maven-cache'
             }
             steps {
-                sh 'mvn site:stage'
+                sh 'mvn site:stage -s settings.xml'
             }
         }
         stage('Deploy Site') {
