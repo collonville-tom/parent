@@ -90,7 +90,7 @@ pipeline {
                             ssh-keyscan -H 192.168.0.132 >> ~/.ssh/known_hosts 2>/dev/null || true
                             
                             cd  /tmp/workspace/parent/tc-parent/target
-                            scp -r ./ Leuviah:/mnt/nfs_storage_client/docker_share/tc-public-share/html/projets/
+                            scp -r ./ ${SITE_USER}@192.168.0.132:/mnt/nfs_storage_client/docker_share/tc-public-share/html/projets/
 
                             # Nettoyer la clé temporaire
                             rm -f ~/.ssh/id_rsa
