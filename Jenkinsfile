@@ -49,6 +49,21 @@ pipeline {
                 }
             }
         }
+        stage('Build Site') {
+            agent {
+                docker { 
+                    image 'maven:3.9.6-eclipse-temurin-21'
+                    args '-v maven-repo:/var/maven-cache'
+                    reuseNode true 
+                }
+            }
+            environment {
+                MAVEN_OPTS = '-Dmaven.repo.local=/var/maven-cache'
+            }
+            steps {
+                sh 'mvn site:site'
+            }
+        }
         stage('Deploy Site') {
             agent {
                 docker { 
@@ -61,9 +76,7 @@ pipeline {
                 MAVEN_OPTS = '-Dmaven.repo.local=/var/maven-cache'
             }
             steps {
-                withCredentials([usernamePassword(credentialsId: 'jenkins2nexus-deployement', usernameVariable: 'MAVEN_USER', passwordVariable: 'MAVEN_PWD')]) {
-                    sh 'mvn site:deploy -s settings.xml' 
-                }
+                sh 'mvn site:deploy -s settings.xml'
             }
         }
         stage('Upload Site') {
