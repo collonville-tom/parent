@@ -9,7 +9,7 @@ pipeline {
     
     environment {
         MAVEN_HOME = '/usr/share/maven'
-        JAVA_HOME = '/opt/java/opeonjdk'
+        JAVA_HOME = '/opt/java/openjdk'
         PATH = "${MAVEN_HOME}/bin:${JAVA_HOME}/bin:${PATH}"
     }
     
@@ -19,7 +19,6 @@ pipeline {
             agent {
                 docker { 
                     image 'maven:3.9.6-eclipse-temurin-21'
-                    // On garde juste le cache maven
                     args '-v maven-repo:/var/maven-cache'
                     reuseNode true 
                 }
@@ -29,7 +28,9 @@ pipeline {
             }
             steps {
                 sh 'mvn -version' 
-                sh 'mvn clean '
+                withCredentials([usernamePassword(credentialsId: 'jenkins2nexus-deployement', usernameVariable: 'MAVEN_USER', passwordVariable: 'MAVEN_PWD')]) {
+                    sh 'mvn clean deploy -Djenkins-username=$MAVEN_USER -Djenkins-pwd=$MAVEN_PWD'
+                }
             }
         }
         
