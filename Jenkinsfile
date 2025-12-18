@@ -15,16 +15,16 @@ pipeline {
     
     stages {
        
-        stage('Build') {
+/*         stage('Build') {
             agent {
                 docker { 
                     image 'maven:3.9.6-eclipse-temurin-21'
-                    args '-v maven-repo:/var/maven-cache'
+                    args '-v maven-repo:/tmp/workspace/maven-cache'
                     reuseNode true 
                 }
             }
             environment {
-                MAVEN_OPTS = '-Dmaven.repo.local=/var/maven-cache'
+                MAVEN_OPTS = '-Dmaven.repo.local=/tmp/workspace/maven-cache'
             }
             steps {
                 sh 'mvn compile'
@@ -36,29 +36,29 @@ pipeline {
             agent {
                 docker { 
                     image 'maven:3.9.6-eclipse-temurin-21'
-                    args '-v maven-repo:/var/maven-cache'
+                    args '-v maven-repo:/tmp/workspace/maven-cache'
                     reuseNode true 
                 }
             }
             environment {
-                MAVEN_OPTS = '-Dmaven.repo.local=/var/maven-cache'
+                MAVEN_OPTS = '-Dmaven.repo.local=/tmp/workspace/maven-cache'
             }
             steps {
                 withCredentials([usernamePassword(credentialsId: 'jenkins2nexus-deployement', usernameVariable: 'MAVEN_USER', passwordVariable: 'MAVEN_PWD')]) {
                     sh 'mvn deploy -Djenkins-username=$MAVEN_USER -Djenkins-pwd=$MAVEN_PWD -s settings.xml' 
                 }
             }
-        }
+        } */
         stage('Build Site') {
             agent {
                 docker { 
                     image 'maven:3.9.6-eclipse-temurin-21'
-                    args '-v maven-repo:/var/maven-cache'
+                    args '-v maven-repo:/tmp/workspace/maven-cache'
                     reuseNode true 
                 }
             }
             environment {
-                MAVEN_OPTS = '-Dmaven.repo.local=/var/maven-cache'
+                MAVEN_OPTS = '-Dmaven.repo.local=/tmp/workspace/maven-cache'
             }
             steps {
                 sh 'mvn site:site'
@@ -68,32 +68,18 @@ pipeline {
             agent {
                 docker { 
                     image 'maven:3.9.6-eclipse-temurin-21'
-                    args '-v maven-repo:/var/maven-cache'
+                    args '-v maven-repo:/tmp/workspace/maven-cache'
                     reuseNode true 
                 }
             }
             environment {
-                MAVEN_OPTS = '-Dmaven.repo.local=/var/maven-cache'
+                MAVEN_OPTS = '-Dmaven.repo.local=/tmp/workspace/maven-cache'
             }
             steps {
-                sh 'mvn site:deploy -s settings.xml'
+                sh 'mvn site:deploy -Dlocal-siteweb-url:http://home_tc-public-share/projets/ -s settings.xml'
             }
         }
-        stage('Upload Site') {
-            agent {
-                docker { 
-                    image 'maven:3.9.6-eclipse-temurin-21'
-                    args '-v maven-repo:/var/maven-cache'
-                    reuseNode true 
-                }
-            }
-            environment {
-                MAVEN_OPTS = '-Dmaven.repo.local=/var/maven-cache'
-            }
-            steps {
-                sh 'ls /tmp/workspace/projets'
-            }
-        }
+        
         
     }
     
