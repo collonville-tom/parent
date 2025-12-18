@@ -143,6 +143,10 @@
 				http://collonvillethomas.freeboxos.fr:8888/nexus/content/repositories/snapshots/
 			</url>
 		</snapshotRepository>
+		<site>
+			<id>home-maven-site</id>
+			<url>${siteweb-url}</url>
+		</site>
 	</distributionManagement>
 	<reporting>
 		<plugins>

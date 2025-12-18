@@ -64,6 +64,21 @@ pipeline {
                 sh 'mvn site:site'
             }
         }
+        stage('Staging Site') {
+            agent {
+                docker { 
+                    image 'maven:3.9.6-eclipse-temurin-21'
+                    args '-v maven-repo:/tmp/workspace/maven-cache'
+                    reuseNode true 
+                }
+            }
+            environment {
+                MAVEN_OPTS = '-Dmaven.repo.local=/tmp/workspace/maven-cache'
+            }
+            steps {
+                sh 'mvn site:stage'
+            }
+        }
         stage('Deploy Site') {
             agent {
                 docker { 
@@ -89,7 +104,7 @@ pipeline {
                             # Ajouter le serveur aux hosts connus (éviter la confirmation)
                             ssh-keyscan -H 192.168.0.132 >> ~/.ssh/known_hosts 2>/dev/null || true
                             pwd
-                            cd  /tmp/workspace/tc-parent_${BRANCH_NAME}/target
+                            cd  /tmp/workspace/tc-parent_${BRANCH_NAME}/target/staging
                             scp -r ./ ${SITE_USER}@192.168.0.132:/mnt/nfs_storage_client/docker_share/tc-public-share/html/projets/
 
                             # Nettoyer la clé temporaire
