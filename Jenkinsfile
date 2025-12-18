@@ -88,7 +88,7 @@ pipeline {
                 MAVEN_OPTS = '-Dmaven.repo.local=/tmp/workspace/maven-cache'
             }
             steps {
-                sh 'mvn site:site -s settings.xml'
+                sh 'mvn site:site -Dbranch-name=${BRANCH_NAME} -s settings.xml'
             }
         }
         stage('Staging Site') {
