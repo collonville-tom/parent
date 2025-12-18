@@ -48,6 +48,10 @@ pipeline {
         }
 
         stage('Deploy Artifact') {
+            when {
+                branch 'develop'
+                branch 'main'
+            }
             agent {
                 docker { 
                     image 'maven:3.9.6-eclipse-temurin-21'
@@ -65,6 +69,10 @@ pipeline {
             }
         }
         stage('Build Site') {
+            when {
+                branch 'develop'
+                branch 'main'
+            }
             agent {
                 docker { 
                     image 'maven:3.9.6-eclipse-temurin-21'
@@ -80,6 +88,10 @@ pipeline {
             }
         }
         stage('Staging Site') {
+            when {
+                branch 'develop'
+                branch 'main'
+            }
             agent {
                 docker { 
                     image 'maven:3.9.6-eclipse-temurin-21'
@@ -91,10 +103,14 @@ pipeline {
                 MAVEN_OPTS = '-Dmaven.repo.local=/tmp/workspace/maven-cache'
             }
             steps {
-                sh 'mvn site:stage -s settings.xml'
+                sh 'mvn site:stage -Dbranch-name=${BRANCH_NAME} -s settings.xml'
             }
         }
         stage('Deploy Site') {
+            when {
+                branch 'develop'
+                branch 'main'
+            }
             agent {
                 docker { 
                     image 'alpine:latest'
@@ -123,7 +139,7 @@ pipeline {
                             ssh-keyscan -H ${SERVER_IP} >> ~/.ssh/known_hosts 2>/dev/null || true
                             pwd
                             cd  /tmp/workspace/tc-parent_${BRANCH_NAME}/target/staging
-                            scp -r ./ ${SITE_USER}@${SERVER_IP}:/mnt/nfs_storage_client/docker_share/tc-public-share/html/projets/
+                            scp -r ./ ${SITE_USER}@${SERVER_IP}:/mnt/nfs_storage_client/docker_share/tc-public-share/html/projets/${BRANCH_NAME}/parent
 
                             # Nettoyer la clé temporaire
                             rm -f ~/.ssh/id_rsa
