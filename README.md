@@ -67,6 +67,6 @@ Le pipeline Jenkins exécute les étapes suivantes :
 
 ## 6. Documentation 
 
-Doc maven site du projet: 
+Documentation maven site du projet: 
 
 https://collonvillethomas.freeboxos.fr/public/projets/develop/parent/tc-parent-module/
