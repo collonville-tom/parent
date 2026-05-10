@@ -146,7 +146,7 @@ pipeline {
                             # Ajouter le serveur aux hosts connus (éviter la confirmation)
                             ssh-keyscan -H ${SERVER_IP} >> ~/.ssh/known_hosts 2>/dev/null || true
                             pwd
-                            cd  /tmp/workspace/tc-parent_${BRANCH_NAME}/target/staging
+                            cd  ${pwd}/target/staging
                             scp -r ./ ${SITE_USER}@${SERVER_IP}:/mnt/nfs_storage_client/docker_share/tc-public-share/html/projets/${BRANCH_NAME}/parent
 
                             # Nettoyer la clé temporaire
