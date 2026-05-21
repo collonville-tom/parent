@@ -60,10 +60,9 @@ pipeline {
                 SONAR_TOKEN = credentials('sonar_token')  // Référence le credential Jenkins
             }
             steps {
-                sh 'mvn clean verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.projectKey=parent -Dsonar.projectName=\'parent\' -Dsonar.branch.name=${BRANCH_NAME} -Dsonar.host.url=http://${SONAR_IP}:9000 \
+                sh 'mvn clean verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.projectKey=parent -Dsonar.projectName=\'parent\' -Dsonar.host.url=http://${SONAR_IP}:9000 \
   -Dsonar.token=${SONAR_TOKEN} -s settings.xml'
             }
-   
         } 
 
         stage('Deploy Artifact') {
