@@ -46,6 +46,11 @@ pipeline {
             }
             
         }
+        stage('SonarQube Analysis') {
+            withSonarQubeEnv() {
+                sh "mvn clean verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.projectKey=parent -Dsonar.projectName='parent'"
+            }   
+        } 
 
         stage('Deploy Artifact') {
             when {
