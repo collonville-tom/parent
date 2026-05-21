@@ -56,10 +56,13 @@ pipeline {
             }
             environment {
                 MAVEN_OPTS = '-Dmaven.repo.local=/tmp/workspace/maven-cache'
+                SONAR_IP = credentials('sonar_host')  // Référence le credential Jenkins
+                SONAR_TOKEN = credentials('sonar_token')  // Référence le credential Jenkins
             }
             steps {
                 withSonarQubeEnv() {
-                    sh 'mvn clean verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.projectKey=parent -Dsonar.projectName=\'parent\' -s settings.xml'
+                    sh 'mvn clean verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.projectKey=parent -Dsonar.projectName=\'parent\' -Dsonar.host.url=http://${SONAR_IP}:9000 \
+  -Dsonar.token=${SONAR_TOKEN} -s settings.xml'
                 }   
             }
    
