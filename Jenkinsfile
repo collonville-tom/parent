@@ -47,9 +47,22 @@ pipeline {
             
         }
         stage('SonarQube Analysis') {
-            withSonarQubeEnv() {
-                sh "mvn clean verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.projectKey=parent -Dsonar.projectName='parent'"
-            }   
+            agent {
+                docker { 
+                    image 'maven:3.9.6-eclipse-temurin-21'
+                    args '-v maven-repo:/tmp/workspace/maven-cache'
+                    reuseNode true 
+                }
+            }
+            environment {
+                MAVEN_OPTS = '-Dmaven.repo.local=/tmp/workspace/maven-cache'
+            }
+            steps {
+                withSonarQubeEnv() {
+                sh 'mvn clean verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.projectKey=parent -Dsonar.projectName=\'parent\' -s settings.xml'
+                }   
+            }
+   
         } 
 
         stage('Deploy Artifact') {
