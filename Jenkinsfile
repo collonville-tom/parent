@@ -59,7 +59,7 @@ pipeline {
             }
             steps {
                 withSonarQubeEnv() {
-                sh 'mvn clean verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.projectKey=parent -Dsonar.projectName=\'parent\' -s settings.xml'
+                    sh 'mvn clean verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.projectKey=parent -Dsonar.projectName=\'parent\' -s settings.xml'
                 }   
             }
    
